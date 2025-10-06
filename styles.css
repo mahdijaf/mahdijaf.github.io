@@ -1,3 +1,4 @@
+/* ---------- THEME ---------- */
 :root{
   --blue:#0b5ed7;
   --blue-ink:#0a3f9c;
@@ -9,6 +10,7 @@
   --sidebar-border:rgba(255,255,255,0.2);
 }
 
+/* ---------- RESET ---------- */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{
   background:var(--bg);
@@ -16,7 +18,7 @@ html,body{
   font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
 }
 
-/* ---------- SIDEBAR (blue) ---------- */
+/* ---------- SIDEBAR (fixed blue) ---------- */
 .sidebar{
   position:fixed; inset:0 auto 0 0; width:300px;
   background:var(--blue); color:#fff; z-index:10;
@@ -30,7 +32,6 @@ html,body{
   transition:background .2s ease;
 }
 .nav a:hover,.nav a:focus{background:rgba(255,255,255,.15); outline:none}
-
 .downloads{display:grid;gap:8px;margin-top:16px}
 .button{
   display:inline-block; text-align:center; padding:10px 12px; border-radius:10px;
@@ -39,28 +40,21 @@ html,body{
 }
 .button:hover{background:rgba(255,255,255,.25)}
 .button.ghost{background:transparent;border:1px solid rgba(255,255,255,.6)}
-
 .contact{font-size:.9rem;margin-top:16px;color:rgba(255,255,255,.85)}
 .contact a{color:var(--blue-light);text-decoration:none}
 .contact a:hover{text-decoration:underline}
 
+/* ---------- PAGE WRAPPER (keeps content right of sidebar) ---------- */
+.page{ margin-left:300px; }
+
 /* ---------- MAIN CONTENT ---------- */
-.content{
-  margin-left:300px;
-  padding:40px 28px;
-  max-width:980px;
-}
+.content{ padding:40px 28px; max-width:980px; }
 
-/* Section wrapper with subtle divider */
-.section{
-  padding:28px 0;
-  scroll-margin-top:16px; /* nice anchor offset */
-}
-.section + .section{
-  border-top:3px solid var(--border); /* light gray bar between sections */
-}
+/* Section wrapper + divider */
+.section{ padding:28px 0; scroll-margin-top:16px; }
+.section + .section{ border-top:3px solid var(--border); }
 
-/* Blue heading bar (like a faculty page) */
+/* Blue heading “pill” */
 .section-title{
   display:inline-block;
   font-size:1.6rem;
@@ -72,24 +66,18 @@ html,body{
   margin-bottom:14px;
 }
 
-/* Subheadings */
-.content h3{
-  margin-top:18px;
-  color:var(--blue);
-  font-size:1.15rem;
-}
+/* Subheads / text */
+.content h3{ margin-top:18px; color:var(--blue); font-size:1.15rem; }
+.content p,.content li{ margin-bottom:8px; color:var(--muted); }
+.content ul,.content ol{ padding-left:20px; }
+.content a{ color:var(--blue); text-decoration:none; }
+.content a:hover{ text-decoration:underline; }
 
-/* Paragraphs & lists */
-.content p,.content li{margin-bottom:8px;color:var(--muted)}
-.content ul, .content ol { padding-left: 20px; }
-.content a{color:var(--blue);text-decoration:none}
-.content a:hover{text-decoration:underline}
+/* Expertise columns */
+.cols{ columns:2; column-gap:28px; margin-top:6px; }
+.cols li{ break-inside:avoid; }
 
-/* Multi-column list for expertise */
-.cols{columns:2; column-gap:28px; margin-top:6px}
-.cols li{break-inside:avoid}
-
-/* ---------- ABOUT layout ---------- */
+/* ---------- ABOUT LAYOUT ---------- */
 .about .about-wrap{
   display:flex; align-items:center; gap:20px; margin-bottom:8px;
 }
@@ -98,19 +86,18 @@ html,body{
   object-fit:cover; border:3px solid var(--blue);
   box-shadow:0 2px 6px rgba(0,0,0,.08);
 }
-.about .name{
-  font-size:1.8rem; margin-bottom:4px; color:var(--blue);
-}
-.about-credential{margin:2px 0; font-weight:600; color:var(--ink)}
-.about-blurb{margin-top:6px}
+.name{ font-size:1.8rem; margin-bottom:4px; color:var(--blue); }
+.about-credential{ margin:2px 0; font-weight:600; color:var(--ink); }
+.about-blurb{ margin-top:6px; }
 
-/* ---------- Responsive ---------- */
+/* ---------- RESPONSIVE ---------- */
 @media (max-width:960px){
   .sidebar{
     position:static; width:100%;
     border-right:none; border-bottom:1px solid var(--border);
   }
-  .content{ margin-left:0; padding:28px 18px; }
+  .page{ margin-left:0; }
+  .content{ padding:28px 18px; }
   .cols{ columns:1; }
   .about .about-wrap{ flex-direction:column; align-items:flex-start; }
   .about-photo{ width:90px; height:90px; }

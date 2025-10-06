@@ -6,8 +6,8 @@
   <title>Dr. Mahdee Jodayree — Personal Academic Homepage</title>
 
   <!-- SEO -->
-  <meta name="description" content="Personal academic homepage of Dr. Mahdee Jodayree, PhD in Computer Science from McMaster University. Research areas: Federated Learning, Cloud Computing, Cybersecurity, Distributed Systems." />
-  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Personal academic homepage of Dr. Mahdee Jodayree, PhD in Computer Science from McMaster University. Research areas: Federated Learning, Cloud Computing, Cybersecurity, Distributed Systems. Teaching expertise: ML, Networks, Discrete Mathematics, Data Structures, SDLC.">
+  <meta name="robots" content="index, follow">
 
   <!-- Schema.org Person -->
   <script type="application/ld+json">
@@ -27,28 +27,17 @@
       {"@type":"CollegeOrUniversity","name":"Carleton University"}
     ],
     "sameAs": [
-      "https://github.com/mahdijaf",
-      "https://www.linkedin.com/in/mahdeej/"
+      "https://github.com/yourusername",
+      "https://www.linkedin.com/in/your-profile"
     ]
   }
   </script>
 
   <link rel="stylesheet" href="styles.css" />
-  <script>
-    // On first load (no hash), jump to the About section
-    window.addEventListener('DOMContentLoaded', function () {
-      if (!location.hash) {
-        const about = document.getElementById('about');
-        if (about && about.scrollIntoView) {
-          about.scrollIntoView({ behavior: 'auto', block: 'start' });
-        }
-      }
-    });
-  </script>
 </head>
 
 <body>
-  <!-- Fixed blue sidebar -->
+  <!-- LEFT SIDEBAR -->
   <aside class="sidebar" role="navigation" aria-label="Primary">
     <nav class="nav">
       <a href="#about">About</a>
@@ -72,17 +61,16 @@
 
     <footer class="contact">
       <p>
-        <a href="https://www.linkedin.com/in/mahdeej/" rel="me" target="_blank">LinkedIn</a> •
-        <a href="https://github.com/mahdijaf" rel="me" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/your-profile" rel="me">LinkedIn</a> •
+        <a href="https://github.com/yourusername" rel="me">GitHub</a>
       </p>
       <small>Last updated: Oct 2025</small>
     </footer>
   </aside>
 
-  <!-- Everything to the right of the sidebar -->
-  <div class="page">
-
-    <!-- ABOUT (photo left, text right) -->
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <!-- ABOUT with photo + info side-by-side -->
     <section id="about" class="about">
       <div class="about-wrap">
         <img src="headshot.jpg" alt="Portrait of Dr. Mahdee Jodayree" class="about-photo" />
@@ -93,16 +81,17 @@
             Department of Computing &amp; Software<br>
             McMaster University
           </p>
-          <p class="about-blurb">
-            I am a researcher and educator in Computer Science with interests in federated learning, cloud computing,
-            cybersecurity, and distributed systems. My Ph.D. work focused on secure, bandwidth-aware federated learning
-            and performance optimization.
-          </p>
         </div>
       </div>
+
+      <p class="about-blurb">
+        I am <strong>Dr. Mahdee Jodayree</strong>, a researcher and educator in Computer Science.
+        My work spans federated learning, cloud computing, cybersecurity, and distributed systems.
+        I completed my PhD at McMaster University (Department of Computing &amp; Software),
+        focusing on secure, bandwidth-aware federated learning and performance optimization.
+      </p>
     </section>
 
-    <!-- TEACHING EXPERTISE -->
     <section id="expertise">
       <h2>Teaching Expertise — Graduate &amp; Undergraduate</h2>
       <ul class="cols">
@@ -121,7 +110,6 @@
       </ul>
     </section>
 
-    <!-- TEACHING EXPERIENCE -->
     <section id="teaching">
       <h2>Teaching Experience</h2>
       <ul>
@@ -131,7 +119,6 @@
       </ul>
     </section>
 
-    <!-- EDUCATION -->
     <section id="education">
       <h2>Education</h2>
       <ul>
@@ -152,7 +139,6 @@
       </ul>
     </section>
 
-    <!-- RESEARCH EXPERIENCE -->
     <section id="research">
       <h2>Research Experience</h2>
       <h3>Ph.D. Studies</h3>
@@ -177,7 +163,6 @@
       </ul>
     </section>
 
-    <!-- PROJECTS -->
     <section id="projects">
       <h2>Projects</h2>
       <h3>Ph.D. Research Projects</h3>
@@ -195,7 +180,6 @@
       </ul>
     </section>
 
-    <!-- WORKSHOPS -->
     <section id="workshops">
       <h2>Workshops &amp; Seminars</h2>
       <ul>
@@ -208,7 +192,6 @@
       </ul>
     </section>
 
-    <!-- CERTIFICATIONS -->
     <section id="certs">
       <h2>Certifications</h2>
       <ul>
@@ -222,7 +205,6 @@
       </ul>
     </section>
 
-    <!-- AWARDS -->
     <section id="awards">
       <h2>Grants, Awards, and Honors</h2>
       <ul>
@@ -233,20 +215,6 @@
       </ul>
     </section>
 
-    <!-- SERVICE -->
-    <section id="service">
-      <h2>Service to the Academic Community</h2>
-      <h3>Coffee Hour for Students</h3>
-      <ul>
-        <li>Planned and managed graduate CS community events; coordinated logistics and engagement.</li>
-      </ul>
-      <h3>Capstone Project Mentor (Mechatronics &amp; Computer Science)</h3>
-      <ul>
-        <li>Guided student presentations, provided structured feedback, and supported faculty coordination.</li>
-      </ul>
-    </section>
-
-    <!-- PUBLICATIONS -->
     <section id="publications">
       <h2>Publications</h2>
       <h3>Submitted / Under Review</h3>
@@ -263,17 +231,10 @@
       </ol>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact">
       <h2>Contact</h2>
-      <p>
-        Connect with me on
-        <a href="https://www.linkedin.com/in/mahdeej/" rel="me" target="_blank">LinkedIn</a>,
-        or explore my work on
-        <a href="https://github.com/mahdijaf" rel="me" target="_blank">GitHub</a>.
-      </p>
+      <p>Connect with me on <a href="https://www.linkedin.com/in/your-profile" rel="me">LinkedIn</a> or explore my work on <a href="https://github.com/yourusername" rel="me">GitHub</a>.</p>
     </section>
-
-  </div><!-- /.page -->
+  </main>
 </body>
 </html>

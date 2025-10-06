@@ -42,7 +42,7 @@
         if (about) about.scrollIntoView({ behavior: 'auto', block: 'start' });
       }
 
-      // Mobile dropdown menu (panel is OUTSIDE the sidebar)
+      // Mobile dropdown menu (panel is outside the sidebar to avoid clipping)
       const btn   = document.getElementById('mobile-menu-btn');
       const panel = document.getElementById('mobile-menu-panel');
 
@@ -64,7 +64,7 @@
       if (btn && panel) {
         btn.addEventListener('click', togglePanel);
 
-        // Close when a link is clicked (after hash navigation)
+        // Close when a link is clicked (allow hash navigation first)
         panel.addEventListener('click', (e) => {
           const t = e.target;
           if (t && t.tagName === 'A') setTimeout(closePanel, 0);
@@ -187,14 +187,14 @@
         <h2 class="section-title">Education</h2>
         <ul>
           <li>
-            <strong>Ph.D., Computer Science</strong> — McMaster University, Hamilton, ON (June 2024)<br>
-            Supervisors: Dr. Ryszard Janicki, Dr. Wenbo He<br>
-            Focus: Federated Machine Learning — Optimization &amp; Security Enhancement<br>
+            <strong>Ph.D., Computer Science</strong> — McMaster University, Hamilton, ON (June 2024)<br />
+            Supervisors: Dr. Ryszard Janicki, Dr. Wenbo He<br />
+            Focus: Federated Machine Learning — Optimization &amp; Security Enhancement<br />
             Highlight: Reduced communication overhead between edge devices and servers.
           </li>
           <li>
-            <strong>MSc, Computer Information Systems</strong> — Athabasca University, Calgary, AB (Aug 2018)<br>
-            Supervisors: Dr. Mahmoud Abaza, Dr. Qing Tan<br>
+            <strong>MSc, Computer Information Systems</strong> — Athabasca University, Calgary, AB (Aug 2018)<br />
+            Supervisors: Dr. Mahmoud Abaza, Dr. Qing Tan<br />
             Focus: Cloud Load Balancing and Quality of Service in Networking.
           </li>
           <li>
@@ -259,13 +259,20 @@
         </ul>
       </section>
 
-      <!-- CERTS -->
+      <!-- CERTIFICATIONS (polished formatting) -->
       <section id="certs" class="section">
         <h2 class="section-title">Certifications</h2>
+
         <ul>
           <li><strong>Teaching &amp; Learning Certificate</strong>, MacPherson Institute (McMaster University)</li>
         </ul>
-        <p><em>Courses completed:</em> EDUCATION 740 (Peer-Evaluated Teaching Experience); EDUCATION 760 (Self-Directed Study); EDUCATION 780 (Self-Directed Teaching Experience).</p>
+        <p><em>Courses completed:</em></p>
+        <ul>
+          <li>EDUCATION 740 — Peer-Evaluated Teaching Experience</li>
+          <li>EDUCATION 760 — Self-Directed Study</li>
+          <li>EDUCATION 780 — Self-Directed Teaching Experience</li>
+        </ul>
+
         <ul>
           <li>Microsoft Certified: Azure Fundamentals (AZ-900)</li>
           <li>Microsoft Certified: Azure Data Fundamentals (DP-900)</li>

@@ -1,0 +1,70 @@
+:root{
+  --ink:#111827;
+  --muted:#e5e7eb;
+  --link:#93c5fd;
+  --sidebar:#0b5ed7; /* BLUE NAV */
+  --sidebar-ink:#ffffff;
+  --border:rgba(255,255,255,0.2);
+  --bg:#ffffff;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+
+/* Sidebar */
+.sidebar{
+  position:fixed; inset:0 auto 0 0; width:320px;
+  background:var(--sidebar); color:var(--sidebar-ink);
+  border-right:1px solid var(--border);
+  display:flex; flex-direction:column; gap:16px; padding:22px;
+  overflow-y:auto;
+}
+.brand img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--border)}
+.brand h1{margin:12px 0 0;font-size:1.25rem}
+.brand p{margin:6px 0 0;opacity:.9}
+
+/* Nav links */
+.nav{display:grid;gap:6px;margin-top:8px}
+.nav a{
+  color:var(--sidebar-ink); text-decoration:none; padding:10px 12px; border-radius:10px;
+  border:1px solid transparent;
+}
+.nav a:hover, .nav a:focus{
+  background:rgba(255,255,255,0.12);
+  border-color:var(--border);
+  outline:none;
+}
+
+/* Buttons */
+.downloads{display:grid;gap:8px;margin-top:8px}
+.button{
+  display:inline-block;text-align:center;padding:10px 12px;border-radius:10px;
+  background:#111827;color:#fff;text-decoration:none;font-weight:600;border:1px solid #111827;
+}
+.button:hover{opacity:.92}
+.button.ghost{
+  background:transparent;color:var(--sidebar-ink);border:1px solid var(--border)
+}
+
+/* Contact in sidebar */
+.contact{font-size:.92rem;opacity:.95}
+.contact a{color:var(--link);text-decoration:none}
+.contact a:hover{text-decoration:underline}
+
+/* Main content */
+.content{margin-left:320px; padding:42px 22px; max-width:940px}
+.content h2{margin-top:40px}
+.content a{color:#0b5ed7}
+
+/* Multi-column list for expertise */
+.cols{
+  columns:2; column-gap:28px; padding-left:18px;
+}
+.cols li{break-inside:avoid}
+
+/* Responsive */
+@media (max-width:960px){
+  .sidebar{position:static;width:auto;border-right:0;border-bottom:1px solid var(--border)}
+  .content{margin-left:0}
+  .cols{columns:1}
+}

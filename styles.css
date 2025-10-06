@@ -1,7 +1,7 @@
 /* ===========================================================
    STYLE: Dr. Mahdee Jodayree — Personal Academic Homepage
    Desktop: Fixed blue sidebar (300px) + content on right
-   Mobile: Sticky top with small "Menu ▾" dropdown (minimized)
+   Mobile: Sticky top bar with small "Menu ▾" dropdown
    =========================================================== */
 
 /* ---------- THEME ---------- */
@@ -16,6 +16,8 @@
   --sidebar-border: rgba(255,255,255,0.2);
   --radius: 10px;
   --radius-sm: 8px;
+
+  --mobile-bar-h: 48px; /* consistent mobile header height */
 }
 
 /* ---------- RESET & BASE ---------- */
@@ -35,11 +37,11 @@ html, body {
 }
 
 /* ===========================================================
-   SIDEBAR (Desktop) + MOBILE HEADER
+   SIDEBAR (Desktop) / MOBILE HEADER
    =========================================================== */
 .sidebar {
   position: fixed;
-  inset: 0 auto 0 0;           /* top right bottom left */
+  inset: 0 auto 0 0;          /* top right bottom left */
   width: 300px;
   background: var(--blue);
   color: #fff;
@@ -49,8 +51,29 @@ html, body {
   padding: 22px 18px;
   border-right: 1px solid var(--sidebar-border);
   overflow-y: auto;
-  z-index: 100;
+  z-index: 100;               /* desktop base */
 }
+
+/* Mobile bar + menu (hidden on desktop by default) */
+.mobile-bar { display: none; }
+.mobile-menu {
+  appearance: none;
+  border: 1px solid rgba(255,255,255,.7);
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-size: 0.95rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.mobile-menu:hover { background: rgba(255,255,255,.2); }
+
+/* Dropdown (mobile only; hidden by default) */
+.mobile-menu-panel {
+  display: none;
+}
+.mobile-menu-panel.open { display: block; }
 
 /* Desktop vertical nav */
 .nav { display: grid; gap: 6px; }
@@ -121,65 +144,50 @@ html, body {
 @media (min-width: 961px) {
   section[id] { scroll-margin-top: 16px; }
 }
-/* Mobile: larger offset (to clear the mobile header) */
+/* Mobile: larger offset (to clear the mobile bar) */
 @media (max-width: 960px) {
-  section[id] { scroll-margin-top: 84px; }
+  section[id] { scroll-margin-top: calc(var(--mobile-bar-h) + 36px); }
 }
 
 /* ===========================================================
-   MOBILE STYLES (Phones & Small Tablets)
+   MOBILE STYLES
    =========================================================== */
 @media (max-width: 960px) {
-  /* Turn sidebar into top bar */
+  /* Turn sidebar into sticky top bar */
   .sidebar {
     position: sticky; top: 0; width: 100%;
     border-right: none; border-bottom: 1px solid var(--border);
-    padding: 0; /* inner elements manage their own padding */
-    z-index: 200; /* above content */
+    padding: 0;
+    z-index: 1000; /* base header layer */
   }
 
-  /* Hide desktop vertical nav & footer on mobile */
-  .nav, .contact { display: none !important; }
-
-  /* Mobile top bar with small Menu button */
+  /* Show mobile bar */
   .mobile-bar {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     gap: 10px;
     background: var(--blue);
     padding: 10px 12px;
+    height: var(--mobile-bar-h);
+    position: sticky;
+    top: 0;
+    z-index: 1001; /* above header base */
   }
 
-  .mobile-menu {
-    appearance: none;
-    border: 1px solid rgba(255,255,255,.7);
-    background: rgba(255,255,255,.12);
-    color: #fff;
-    border-radius: var(--radius-sm);
-    padding: 6px 10px;
-    font-size: 0.95rem;
-    line-height: 1;
-    cursor: pointer;
-  }
-  .mobile-menu:hover { background: rgba(255,255,255,.2); }
-
-  /* Dropdown panel under the button (hidden by default) */
+  /* Mobile dropdown panel floats above the page */
   .mobile-menu-panel {
-    display: none;
-    position: absolute;
-    top: 44px;          /* ~mobile-bar height */
+    position: fixed; /* makes sure it overlays all content */
+    top: calc(var(--mobile-bar-h) + 6px);
     left: 10px;
     right: 10px;
     background: #fff;
     color: var(--ink);
     border: 1px solid var(--border);
     border-radius: 10px;
-    box-shadow: 0 10px 24px rgba(0,0,0,.12);
+    box-shadow: 0 14px 32px rgba(0,0,0,.18);
     padding: 8px;
-    z-index: 250;
+    z-index: 1005; /* highest */
   }
-  .mobile-menu-panel.open { display: block; }
 
   .mobile-menu-panel a {
     display: block;
@@ -193,7 +201,10 @@ html, body {
     background: #f3f4f6;
   }
 
-  /* Content: remove left offset */
+  /* Hide desktop vertical nav & footer on mobile */
+  .nav, .contact { display: none !important; }
+
+  /* Remove desktop offset; content fills width */
   .page { margin-left: 0; }
   .content { padding: 20px 14px; }
 

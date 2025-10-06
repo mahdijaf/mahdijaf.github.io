@@ -1,7 +1,7 @@
 /* ===========================================================
    STYLE: Dr. Mahdee Jodayree — Personal Academic Homepage
-   Desktop: Fixed blue sidebar (300px) + content on the right
-   Mobile: Sticky blue header with collapsible menu
+   Desktop: Fixed blue sidebar (300px) + content on right
+   Mobile: Sticky blue header with compact top nav (always visible)
    =========================================================== */
 
 /* ---------- THEME ---------- */
@@ -15,7 +15,6 @@
   --border: #e5e7eb;
   --sidebar-border: rgba(255, 255, 255, 0.2);
   --radius: 10px;
-  --radius-sm: 8px;
 }
 
 /* ---------- RESET & BASE ---------- */
@@ -31,7 +30,7 @@ html, body {
 :focus-visible {
   outline: 3px solid rgba(11, 94, 215, 0.45);
   outline-offset: 2px;
-  border-radius: var(--radius);
+  border-radius: 6px;
 }
 
 /* ===========================================================
@@ -39,7 +38,7 @@ html, body {
    =========================================================== */
 .sidebar {
   position: fixed;
-  inset: 0 auto 0 0; /* top right bottom left */
+  inset: 0 auto 0 0;           /* top right bottom left */
   width: 300px;
   background: var(--blue);
   color: #fff;
@@ -52,28 +51,12 @@ html, body {
   z-index: 100;
 }
 
-/* Mobile header bar (hidden on desktop) */
-.mobile-bar {
+/* Mobile compact top nav (hidden on desktop) */
+.mobile-topnav {
   display: none;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 8px;
 }
-.site-mark { font-weight: 700; letter-spacing: .3px; user-select: none; }
-.mobile-menu {
-  appearance: none;
-  border: 1px solid rgba(255,255,255,.7);
-  background: rgba(255,255,255,.12);
-  color: #fff;
-  border-radius: var(--radius-sm);
-  padding: 6px 10px;
-  font-size: 1rem;
-  line-height: 1;
-  cursor: pointer;
-}
-.mobile-menu:hover { background: rgba(255,255,255,.2); }
 
-/* Nav links */
+/* Desktop vertical nav */
 .nav { display: grid; gap: 6px; }
 .nav a {
   color: #fff; text-decoration: none;
@@ -144,29 +127,48 @@ html, body {
 }
 /* Mobile: larger offset for sticky header */
 @media (max-width: 960px) {
-  section[id] { scroll-margin-top: 100px; }
+  section[id] { scroll-margin-top: 84px; } /* matches mobile top bar height */
 }
 
 /* ===========================================================
    RESPONSIVE (Phones & Small Tablets)
    =========================================================== */
 @media (max-width: 960px) {
-  /* Sidebar becomes sticky top header */
+  /* Sidebar becomes a sticky top header bar */
   .sidebar {
     position: sticky; top: 0; width: 100%;
     border-right: none; border-bottom: 1px solid var(--border);
-    padding: 10px 12px;
+    padding: 0;                        /* we’ll pad internal rows instead */
   }
 
-  /* Show compact mobile bar + Menu button */
-  .mobile-bar { display: flex; }
+  /* Show compact top nav */
+  .mobile-topnav {
+    display: flex;
+    gap: 10px;
+    padding: 10px 12px;
+    background: var(--blue);
+    position: sticky; top: 0; z-index: 101; /* stay on top while scrolling */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  .mobile-topnav a {
+    color: #fff; text-decoration: none;
+    white-space: nowrap;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.35);
+    font-size: 0.95rem;
+    flex: 0 0 auto;
+  }
+  .mobile-topnav a:focus-visible { outline-offset: 3px; }
 
-  /* Collapse the nav by default on phones */
-  .nav { display: none; margin-top: 8px; }
-  .sidebar.open .nav { display: grid; }   /* opened via Menu button */
-  .nav a { padding: 12px 10px; }
+  /* Hide desktop vertical nav on mobile */
+  .nav { display: none !important; }
 
-  .contact { margin-top: 10px; }
+  .contact {
+    display: none;       /* hide sidebar footer to keep header compact */
+  }
 
   /* Remove desktop offset; content fills width */
   .page { margin-left: 0; }
@@ -184,15 +186,15 @@ html, body {
 }
 
 /* ===========================================================
-   DESKTOP ENFORCERS (ensure nav is visible on large screens)
+   DESKTOP ENFORCERS
    =========================================================== */
 @media (min-width: 961px) {
-  .nav { display: grid !important; }   /* force visible on desktop */
-  .mobile-bar { display: none !important; }
+  .nav { display: grid !important; }    /* ensure desktop nav is visible */
+  .mobile-topnav { display: none !important; }
 }
 
 /* ===========================================================
-   PRINT (optional)
+   PRINT
    =========================================================== */
 @media print {
   .sidebar { display: none; }

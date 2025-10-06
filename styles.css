@@ -1,7 +1,7 @@
 /* ===========================================================
    STYLE: Dr. Mahdee Jodayree — Personal Academic Homepage
    Desktop: Fixed blue sidebar (300px) + content on right
-   Mobile: Sticky blue header with compact top nav (always visible)
+   Mobile: Sticky top with small "Menu ▾" dropdown (minimized)
    =========================================================== */
 
 /* ---------- THEME ---------- */
@@ -13,8 +13,9 @@
   --muted: #374151;
   --bg: #ffffff;
   --border: #e5e7eb;
-  --sidebar-border: rgba(255, 255, 255, 0.2);
+  --sidebar-border: rgba(255,255,255,0.2);
   --radius: 10px;
+  --radius-sm: 8px;
 }
 
 /* ---------- RESET & BASE ---------- */
@@ -34,7 +35,7 @@ html, body {
 }
 
 /* ===========================================================
-   SIDEBAR (Desktop) / MOBILE HEADER
+   SIDEBAR (Desktop) + MOBILE HEADER
    =========================================================== */
 .sidebar {
   position: fixed;
@@ -49,11 +50,6 @@ html, body {
   border-right: 1px solid var(--sidebar-border);
   overflow-y: auto;
   z-index: 100;
-}
-
-/* Mobile compact top nav (hidden on desktop) */
-.mobile-topnav {
-  display: none;
 }
 
 /* Desktop vertical nav */
@@ -125,59 +121,86 @@ html, body {
 @media (min-width: 961px) {
   section[id] { scroll-margin-top: 16px; }
 }
-/* Mobile: larger offset for sticky header */
+/* Mobile: larger offset (to clear the mobile header) */
 @media (max-width: 960px) {
-  section[id] { scroll-margin-top: 84px; } /* matches mobile top bar height */
+  section[id] { scroll-margin-top: 84px; }
 }
 
 /* ===========================================================
-   RESPONSIVE (Phones & Small Tablets)
+   MOBILE STYLES (Phones & Small Tablets)
    =========================================================== */
 @media (max-width: 960px) {
-  /* Sidebar becomes a sticky top header bar */
+  /* Turn sidebar into top bar */
   .sidebar {
     position: sticky; top: 0; width: 100%;
     border-right: none; border-bottom: 1px solid var(--border);
-    padding: 0;                        /* we’ll pad internal rows instead */
+    padding: 0; /* inner elements manage their own padding */
+    z-index: 200; /* above content */
   }
 
-  /* Show compact top nav */
-  .mobile-topnav {
+  /* Hide desktop vertical nav & footer on mobile */
+  .nav, .contact { display: none !important; }
+
+  /* Mobile top bar with small Menu button */
+  .mobile-bar {
     display: flex;
+    align-items: center;
+    justify-content: flex-start;
     gap: 10px;
-    padding: 10px 12px;
     background: var(--blue);
-    position: sticky; top: 0; z-index: 101; /* stay on top while scrolling */
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
+    padding: 10px 12px;
   }
-  .mobile-topnav a {
-    color: #fff; text-decoration: none;
-    white-space: nowrap;
+
+  .mobile-menu {
+    appearance: none;
+    border: 1px solid rgba(255,255,255,.7);
+    background: rgba(255,255,255,.12);
+    color: #fff;
+    border-radius: var(--radius-sm);
     padding: 6px 10px;
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,.35);
     font-size: 0.95rem;
-    flex: 0 0 auto;
+    line-height: 1;
+    cursor: pointer;
   }
-  .mobile-topnav a:focus-visible { outline-offset: 3px; }
+  .mobile-menu:hover { background: rgba(255,255,255,.2); }
 
-  /* Hide desktop vertical nav on mobile */
-  .nav { display: none !important; }
+  /* Dropdown panel under the button (hidden by default) */
+  .mobile-menu-panel {
+    display: none;
+    position: absolute;
+    top: 44px;          /* ~mobile-bar height */
+    left: 10px;
+    right: 10px;
+    background: #fff;
+    color: var(--ink);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 10px 24px rgba(0,0,0,.12);
+    padding: 8px;
+    z-index: 250;
+  }
+  .mobile-menu-panel.open { display: block; }
 
-  .contact {
-    display: none;       /* hide sidebar footer to keep header compact */
+  .mobile-menu-panel a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .mobile-menu-panel a:hover,
+  .mobile-menu-panel a:focus {
+    background: #f3f4f6;
   }
 
-  /* Remove desktop offset; content fills width */
+  /* Content: remove left offset */
   .page { margin-left: 0; }
   .content { padding: 20px 14px; }
 
   /* Single-column lists */
   .cols { columns: 1; }
 
-  /* About layout stacks */
+  /* About stacks */
   .about .about-wrap { flex-direction: column; align-items: flex-start; }
   .about-photo { width: 92px; height: 92px; }
 
@@ -189,8 +212,8 @@ html, body {
    DESKTOP ENFORCERS
    =========================================================== */
 @media (min-width: 961px) {
-  .nav { display: grid !important; }    /* ensure desktop nav is visible */
-  .mobile-topnav { display: none !important; }
+  .mobile-bar, .mobile-menu-panel { display: none !important; }
+  .nav { display: grid !important; }
 }
 
 /* ===========================================================

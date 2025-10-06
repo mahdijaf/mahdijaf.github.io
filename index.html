@@ -35,14 +35,21 @@
 
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <aside class="sidebar" role="navigation" aria-label="Primary">
-    <div class="brand">
-      <img src="headshot.jpg" alt="Portrait of Dr. Mahdee Jodayree" />
-      <h1>Dr. Mahdee Jodayree</h1>
-      <p>PhD in Computer Science<br>Department of Computing &amp; Software<br>McMaster University</p>
-    </div>
 
+<body>
+  <!-- ===== HERO HEADER ===== -->
+  <header class="hero">
+    <img src="headshot.jpg" alt="Portrait of Dr. Mahdee Jodayree" class="hero-photo" />
+    <div class="hero-text">
+      <h1>Dr. Mahdee Jodayree</h1>
+      <p>PhD in Computer Science</p>
+      <p>Department of Computing &amp; Software</p>
+      <p>McMaster University</p>
+    </div>
+  </header>
+
+  <!-- ===== LEFT SIDEBAR ===== -->
+  <aside class="sidebar" role="navigation" aria-label="Primary">
     <nav class="nav">
       <a href="#about">About</a>
       <a href="#expertise">Teaching Expertise</a>
@@ -72,6 +79,7 @@
     </footer>
   </aside>
 
+  <!-- ===== MAIN CONTENT ===== -->
   <main class="content">
     <section id="about">
       <h2>About</h2>
@@ -105,7 +113,7 @@
       <h2>Teaching Experience</h2>
       <ul>
         <li>Designed and delivered courses in Networks, Cloud Computing, Machine Learning, Data Analytics, Programming, Data Structures &amp; Algorithms, and Discrete Mathematics with interactive lectures and hands-on exercises.</li>
-        <li>Built practical lab experiences to strengthen experiential learning and skills application.</li>
+        <li>Built practical lab experiences to strengthen experiential learning and skill application.</li>
         <li>Developed slides, assignments, homework, and tutorials for theory-focused courses.</li>
       </ul>
     </section>
@@ -116,7 +124,7 @@
         <li>
           <strong>Ph.D., Computer Science</strong> — McMaster University, Hamilton, ON (June 2024)<br>
           Supervisors: Dr. Ryszard Janicki, Dr. Wenbo He<br>
-          Dissertation focus: Federated Machine Learning — Optimization &amp; Security Enhancement.<br>
+          Focus: Federated Machine Learning — Optimization &amp; Security Enhancement<br>
           Highlight: Reduced communication overhead between edge devices and servers.
         </li>
         <li>
@@ -136,14 +144,14 @@
       <ul>
         <li>Researched Federated Learning with emphasis on optimization and security.</li>
         <li>Reduced communication overhead across edge–server pathways.</li>
-        <li>Integrated Indigenous pedagogies into STEM outreach for K–12 math and computing.</li>
+        <li>Integrated Indigenous pedagogies into STEM outreach for K–12 mathematics and computing.</li>
         <li>Designed modular, scalable object-oriented software architectures for enterprise systems.</li>
         <li>Optimized database design and data structures for large-scale information systems.</li>
       </ul>
 
       <h3>Master’s Studies</h3>
       <ul>
-        <li>Investigated cloud load balancing and QoS in networking environments.</li>
+        <li>Investigated cloud load balancing and Quality of Service in networking environments.</li>
         <li>Built simulations for cloud resource management and performance analysis.</li>
       </ul>
 
@@ -161,13 +169,13 @@
         <li><strong>Federated Machine Learning:</strong> Optimization &amp; security enhancements; bandwidth-aware aggregation; improved resource utilization and latency.</li>
         <li><strong>Object-Oriented Architectures:</strong> Modular, scalable designs using proven patterns to support enterprise applications.</li>
         <li><strong>Database Design &amp; Data Structures:</strong> Performance-tuned schemas and data access strategies for large information systems.</li>
-        <li><strong>Network Simulations:</strong> Modeled complex topologies and cloud protocols with <em>GNS3</em>, <em>ns-3</em>, and <em>Cisco Packet Tracer</em>; used <em>MATLAB/Simulink</em> for control-system models; created virtual testbeds with <em>VirtualBox</em> and managed VMs via <em>VMM</em> for resource-allocation studies.</li>
+        <li><strong>Network Simulations:</strong> Modeled complex topologies with <em>GNS3</em>, <em>ns-3</em>, and <em>Cisco Packet Tracer</em>; used <em>MATLAB/Simulink</em> for control systems; created virtual environments with <em>VirtualBox</em> and <em>VMM</em>.</li>
       </ul>
 
       <h3>Master’s Research Projects</h3>
       <ul>
-        <li><strong>Cloud Load Balancing &amp; QoS:</strong> Evaluated techniques and their impact on performance and reliability.</li>
-        <li><strong>Cloud Resource Simulations:</strong> Built studies with <em>CloudSim</em>, <em>iFogSim</em>, and <em>SimGrid</em> to analyze utilization, latency, and throughput under varied workloads; identified bottlenecks and optimized allocation strategies.</li>
+        <li><strong>Cloud Load Balancing &amp; QoS:</strong> Evaluated methods to improve performance and reliability.</li>
+        <li><strong>Cloud Resource Simulations:</strong> Built models with <em>CloudSim</em>, <em>iFogSim</em>, and <em>SimGrid</em> to assess utilization and throughput under varied workloads.</li>
       </ul>
     </section>
 
@@ -200,8 +208,8 @@
       <h2>Grants, Awards, and Honors</h2>
       <ul>
         <li><strong>Distinguished Teaching Assistant Award</strong> — McMaster University (Fall 2019 &amp; Winter 2020)</li>
-        <li><strong>Research Excellence Award</strong> — Federated Learning and Health Informatics (2023)</li>
-        <li><strong>Graduate Research Grant</strong> — Communication optimization in FL frameworks (2022)</li>
+        <li><strong>Research Excellence Award</strong> — Federated Learning &amp; Health Informatics (2023)</li>
+        <li><strong>Graduate Research Grant</strong> — Optimization in Federated Learning frameworks (2022)</li>
         <li><strong>Best Paper Award</strong> — KES 2023 (Data Security in Federated Learning)</li>
       </ul>
     </section>
@@ -210,35 +218,33 @@
       <h2>Service to the Academic Community</h2>
       <h3>Coffee Hour for Students</h3>
       <ul>
-        <li>Planned and ran graduate CS community events; managed logistics, engagement, and follow-up.</li>
+        <li>Planned and managed graduate CS community events; coordinated logistics and engagement.</li>
       </ul>
       <h3>Capstone Project Mentor (Mechatronics &amp; Computer Science)</h3>
       <ul>
-        <li>Guided students during final presentations; provided structured feedback and coordination with faculty.</li>
+        <li>Guided student presentations, provided structured feedback, and supported faculty coordination.</li>
       </ul>
     </section>
 
     <section id="publications">
       <h2>Publications</h2>
-
       <h3>Submitted / Under Review</h3>
       <ul>
         <li><strong>Q1 (Submitted):</strong> <em>Proof-Before-Train Federated Learning—ECC-Backed Zero-Leak Commitments and Trust-Aware Aggregation under Bandwidth Constraints</em>, submitted to <em>Computers &amp; Security</em> (Elsevier, Q1).</li>
         <li><strong>Q2 (Under review):</strong> <em>A Predictive Approach to Workload Balancing in Cloud Computing Using Pairwise Comparison</em>, submitted to the <em>Journal of Cloud Computing</em> (Q2).</li>
       </ul>
-
       <h3>Published Papers</h3>
       <ol>
-        <li>Jodayree, M., He, W., &amp; Janicki, R. (2023). <em>Preventing Text Data Poisoning Attacks in Federated Machine Learning by an Encrypted Verification Key</em>. IJCRS 2023. <a href="https://link.springer.com/chapter/10.1007/978-3-031-50959-9_42" target="_blank" rel="noopener">SpringerLink</a>.</li>
-        <li>Jodayree, M., He, W., &amp; Janicki, R. (2023). <em>Preventing Image Data Poisoning Attacks in Federated Machine Learning by an Encrypted Verification Key</em>. KES 2023. <a href="https://doi.org/10.1016/j.procs.2023.10.264" target="_blank" rel="noopener">DOI</a>.</li>
-        <li>Jodayree, M., &amp; Janicki, R. (2020). <em>A predictive resources management for clouds</em>. In FLINS 2020, 421–428. <a href="https://doi.org/10.1142/9789811223334_0051" target="_blank" rel="noopener">DOI</a>.</li>
-        <li>Jodayree, M., Abaza, M., &amp; Tan, Q. (2019). <em>A predictive workload balancing algorithm in cloud services</em>. <em>Procedia Computer Science</em>, 159, 902–912. <a href="https://doi.org/10.1016/j.procs.2019.09.250" target="_blank" rel="noopener">DOI</a>.</li>
+        <li>Jodayree, M., He, W., &amp; Janicki, R. (2023). <em>Preventing Text Data Poisoning Attacks in Federated Machine Learning by an Encrypted Verification Key.</em> IJCRS 2023. <a href="https://link.springer.com/chapter/10.1007/978-3-031-50959-9_42" target="_blank" rel="noopener">SpringerLink</a>.</li>
+        <li>Jodayree, M., He, W., &amp; Janicki, R. (2023). <em>Preventing Image Data Poisoning Attacks in Federated Machine Learning by an Encrypted Verification Key.</em> KES 2023. <a href="https://doi.org/10.1016/j.procs.2023.10.264" target="_blank" rel="noopener">DOI</a>.</li>
+        <li>Jodayree, M., &amp; Janicki, R. (2020). <em>A predictive resources management for clouds.</em> In FLINS 2020, 421–428. <a href="https://doi.org/10.1142/9789811223334_0051" target="_blank" rel="noopener">DOI</a>.</li>
+        <li>Jodayree, M., Abaza, M., &amp; Tan, Q. (2019). <em>A predictive workload balancing algorithm in cloud services.</em> <em>Procedia Computer Science</em>, 159, 902–912. <a href="https://doi.org/10.1016/j.procs.2019.09.250" target="_blank" rel="noopener">DOI</a>.</li>
       </ol>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>Connect with me on <a href="https://www.linkedin.com/in/your-profile" rel="me">LinkedIn</a> or explore my code on <a href="https://github.com/yourusername" rel="me">GitHub</a>.</p>
+      <p>Connect with me on <a href="https://www.linkedin.com/in/your-profile" rel="me">LinkedIn</a> or explore my work on <a href="https://github.com/yourusername" rel="me">GitHub</a>.</p>
     </section>
   </main>
 </body>

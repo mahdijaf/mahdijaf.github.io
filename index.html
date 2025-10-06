@@ -35,7 +35,6 @@
 
   <link rel="stylesheet" href="styles.css" />
   <script>
-    // Helpers available after DOM is ready
     window.addEventListener('DOMContentLoaded', function () {
       // Jump to About on first load if no hash
       if (!location.hash) {
@@ -43,7 +42,7 @@
         if (about) about.scrollIntoView({ behavior: 'auto', block: 'start' });
       }
 
-      // Mobile dropdown menu behavior
+      // Mobile dropdown menu (panel is OUTSIDE the sidebar)
       const btn   = document.getElementById('mobile-menu-btn');
       const panel = document.getElementById('mobile-menu-panel');
 
@@ -59,23 +58,16 @@
       }
       function togglePanel(e) {
         e.stopPropagation();
-        if (panel.classList.contains('open')) {
-          closePanel();
-        } else {
-          openPanel();
-        }
+        panel.classList.contains('open') ? closePanel() : openPanel();
       }
 
       if (btn && panel) {
         btn.addEventListener('click', togglePanel);
 
-        // Close when a link is clicked, after allowing hash navigation to occur
+        // Close when a link is clicked (after hash navigation)
         panel.addEventListener('click', (e) => {
           const t = e.target;
-          if (t && t.tagName === 'A') {
-            // Let the anchor change the hash, then close
-            setTimeout(closePanel, 0);
-          }
+          if (t && t.tagName === 'A') setTimeout(closePanel, 0);
         });
 
         // Close on outside click
@@ -85,12 +77,10 @@
           }
         });
 
-        // Close on ESC
+        // Close on ESC and on hash change
         document.addEventListener('keydown', (e) => {
           if (e.key === 'Escape' && panel.classList.contains('open')) closePanel();
         });
-
-        // Close when the hash changes (e.g., anchor navigation)
         window.addEventListener('hashchange', closePanel);
       }
     });
@@ -109,21 +99,6 @@
               aria-label="Open navigation">
         Menu ▾
       </button>
-      <!-- Dropdown panel with links (mobile only) -->
-      <div id="mobile-menu-panel" class="mobile-menu-panel" role="menu" aria-label="Mobile navigation menu">
-        <a href="#about" role="menuitem">About</a>
-        <a href="#expertise" role="menuitem">Teaching Expertise</a>
-        <a href="#teaching" role="menuitem">Teaching Experience</a>
-        <a href="#education" role="menuitem">Education</a>
-        <a href="#research" role="menuitem">Research Experience</a>
-        <a href="#projects" role="menuitem">Projects</a>
-        <a href="#workshops" role="menuitem">Workshops &amp; Seminars</a>
-        <a href="#certs" role="menuitem">Certifications</a>
-        <a href="#awards" role="menuitem">Grants &amp; Awards</a>
-        <a href="#service" role="menuitem">Service</a>
-        <a href="#publications" role="menuitem">Publications</a>
-        <a href="#contact" role="menuitem">Contact</a>
-      </div>
     </div>
 
     <!-- Desktop vertical nav -->
@@ -350,6 +325,22 @@
         </p>
       </section>
     </main>
+  </div>
+
+  <!-- MOBILE DROPDOWN PANEL (outside sidebar to avoid clipping) -->
+  <div id="mobile-menu-panel" class="mobile-menu-panel" role="menu" aria-label="Mobile navigation menu">
+    <a href="#about" role="menuitem">About</a>
+    <a href="#expertise" role="menuitem">Teaching Expertise</a>
+    <a href="#teaching" role="menuitem">Teaching Experience</a>
+    <a href="#education" role="menuitem">Education</a>
+    <a href="#research" role="menuitem">Research Experience</a>
+    <a href="#projects" role="menuitem">Projects</a>
+    <a href="#workshops" role="menuitem">Workshops &amp; Seminars</a>
+    <a href="#certs" role="menuitem">Certifications</a>
+    <a href="#awards" role="menuitem">Grants &amp; Awards</a>
+    <a href="#service" role="menuitem">Service</a>
+    <a href="#publications" role="menuitem">Publications</a>
+    <a href="#contact" role="menuitem">Contact</a>
   </div>
 </body>
 </html>

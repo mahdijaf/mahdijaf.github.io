@@ -1,10 +1,10 @@
 /* ===========================================================
    STYLE: Dr. Mahdee Jodayree Personal Academic Homepage
-   Layout: Fixed blue sidebar (300px) + content area on the right
-   Mobile: Sidebar stacks on top; content margin removed
+   Desktop: Fixed blue sidebar (300px) + content on right
+   Mobile: Blue header with collapsible menu (hidden by default)
    =========================================================== */
 
-/* ---------- COLOR THEME ---------- */
+/* ---------- THEME ---------- */
 :root {
   --blue: #0b5ed7;
   --blue-dark: #083d9a;
@@ -13,22 +13,21 @@
   --muted: #374151;
   --bg: #ffffff;
   --border: #e5e7eb;
-  --sidebar-border: rgba(255, 255, 255, 0.2);
+  --sidebar-border: rgba(255,255,255,0.2);
 }
 
-/* ---------- GLOBAL RESET ---------- */
+/* ---------- RESET ---------- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
 html, body {
   background: var(--bg);
   color: var(--ink);
   font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  -webkit-text-size-adjust: 100%; /* prevent iOS font zoom jumps */
+  -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
 }
 
 /* ===========================================================
-   SIDEBAR (FIXED, BLUE)
+   SIDEBAR (Desktop) / MOBILE HEADER
    =========================================================== */
 .sidebar {
   position: fixed;
@@ -44,6 +43,23 @@ html, body {
   overflow-y: auto;
   z-index: 10;
 }
+
+/* Mobile bar (hidden on desktop; shown on phones) */
+.mobile-bar {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.site-mark { font-weight: 700; letter-spacing: 0.3px; }
+.mobile-menu {
+  appearance: none; border: 1px solid rgba(255,255,255,.7);
+  background: rgba(255,255,255,.12); color: #fff;
+  border-radius: 8px; padding: 6px 10px; font-size: 1rem;
+  line-height: 1; cursor: pointer;
+}
+
+/* Nav links */
 .nav { display: grid; gap: 6px; }
 .nav a {
   color: #fff; text-decoration: none;
@@ -52,12 +68,13 @@ html, body {
 }
 .nav a:hover, .nav a:focus { background: rgba(255,255,255,.15); outline: none; }
 
+/* Footer */
 .contact { font-size: .9rem; margin-top: 16px; color: rgba(255,255,255,.88); }
 .contact a { color: var(--blue-light); text-decoration: none; }
 .contact a:hover { text-decoration: underline; }
 
 /* ===========================================================
-   PAGE LAYOUT (pushes content to the right of sidebar)
+   PAGE LAYOUT (Desktop)
    =========================================================== */
 .page { margin-left: 300px; background: var(--bg); }
 
@@ -69,15 +86,15 @@ html, body {
 .section + .section { border-top: 3px solid var(--border); }
 
 /* Blue heading pill */
-.section-title{
-  display:inline-block;
-  font-size:1.6rem;
-  color:var(--blue-dark);
-  padding:4px 12px 6px 12px;
-  border-left:6px solid var(--blue);
-  background:linear-gradient(to right, rgba(11,94,215,.08), transparent 70%);
-  border-radius:6px 999px 999px 6px;
-  margin-bottom:16px;
+.section-title {
+  display: inline-block;
+  font-size: 1.6rem;
+  color: var(--blue-dark);
+  padding: 4px 12px 6px 12px;
+  border-left: 6px solid var(--blue);
+  background: linear-gradient(to right, rgba(11,94,215,.08), transparent 70%);
+  border-radius: 6px 999px 999px 6px;
+  margin-bottom: 16px;
 }
 
 /* Subheads & text */
@@ -92,35 +109,50 @@ html, body {
 .cols li { break-inside: avoid; }
 
 /* ===========================================================
-   ABOUT SECTION (photo + text)
+   ABOUT
    =========================================================== */
-.about .about-wrap {
-  display: flex; align-items: center; gap: 18px; margin-bottom: 10px;
-}
-.about-photo{
+.about .about-wrap { display: flex; align-items: center; gap: 18px; margin-bottom: 10px; }
+.about-photo {
   width: 110px; height: 110px; border-radius: 50%;
   object-fit: cover; border: 3px solid var(--blue);
   box-shadow: 0 2px 6px rgba(0,0,0,.08);
 }
-.name{ font-size: 1.8rem; margin-bottom: 4px; color: var(--blue); }
-.about-credential{ margin: 2px 0; font-weight: 600; color: var(--ink); }
-.about-blurb{ margin-top: 6px; }
+.name { font-size: 1.8rem; margin-bottom: 4px; color: var(--blue); }
+.about-credential { margin: 2px 0; font-weight: 600; color: var(--ink); }
+.about-blurb { margin-top: 6px; }
 
 /* ===========================================================
-   RESPONSIVE (phones & small tablets)
+   RESPONSIVE (Phones & Small Tablets)
    =========================================================== */
 @media (max-width: 960px) {
+  /* Sidebar becomes a top header */
   .sidebar {
-    position: static; width: 100%;
+    position: sticky; top: 0; width: 100%;
     border-right: none; border-bottom: 1px solid var(--border);
+    padding: 10px 12px;
   }
-  .page { margin-left: 0; }              /* remove offset on small screens */
-  .content { padding: 22px 16px; }       /* tighter padding for phones */
-  .cols { columns: 1; }                  /* stack expertise list */
-  .about .about-wrap {
-    flex-direction: column; align-items: flex-start;
-  }
-  .about-photo { width: 92px; height: 92px; } /* smaller headshot on phones */
+
+  /* Show compact mobile bar and menu button */
+  .mobile-bar { display: flex; }
+
+  /* Collapse the nav by default on phones */
+  .nav { display: none; margin-top: 8px; }
+  .sidebar.open .nav { display: grid; }   /* opened via button */
+  .nav a { padding: 12px 10px; }
+
+  .contact { margin-top: 10px; }
+
+  /* Remove desktop offset; content fills width */
+  .page { margin-left: 0; }
+  .content { padding: 20px 14px; }
+
+  /* Single-column lists */
+  .cols { columns: 1; }
+
+  /* About stack */
+  .about .about-wrap { flex-direction: column; align-items: flex-start; }
+  .about-photo { width: 92px; height: 92px; }
+
   .section { padding: 22px 0; }
   .section-title { font-size: 1.35rem; }
 }

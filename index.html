@@ -1,16 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dr. Mahdee Jodayree — Personal Academic Homepage</title>
-
-  <!-- SEO -->
-  <meta name="description" content="Personal academic homepage of Dr. Mahdee Jodayree, PhD in Computer Science from McMaster University. Research areas: Distributed & Federated Learning, Cloud Computing, Secure & Privacy-Preserving Computing, Embedded & Edge Intelligence, Autonomous Systems." />
-  <meta name="robots" content="index, follow" />
-
-  <!-- Schema.org Person -->
-  <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Dr. Mahdee Jodayree — Personal Academic Homepage</title>
+<!-- SEO -->
+<meta content="Personal academic homepage of Dr. Mahdee Jodayree, PhD in Computer Science from McMaster University. Research areas: Distributed &amp; Federated Learning, Cloud Computing, Secure &amp; Privacy-Preserving Computing, Embedded &amp; Edge Intelligence, Autonomous Systems." name="description"/>
+<meta content="index, follow" name="robots"/>
+<!-- Schema.org Person -->
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -37,9 +36,8 @@
     ]
   }
   </script>
-
-  <link rel="stylesheet" href="styles.css" />
-  <script>
+<link href="styles.css" rel="stylesheet"/>
+<script>
     window.addEventListener('DOMContentLoaded', function () {
       // Jump to About on first load if no hash
       if (!location.hash) {
@@ -90,441 +88,477 @@
       }
     });
   </script>
-</head>
+<style>
+/* ===== Publications styling ===== */
+.publications {
+  margin-top: 24px;
+  padding: 20px 18px;
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: 14px;
+  background: rgba(255,255,255,.70);
+}
 
+.publications .pub-title {
+  font-size: 1.35rem;
+  margin: 0 0 10px 0;
+  letter-spacing: .2px;
+}
+
+.publications .pub-subtitle {
+  font-size: 0.95rem;
+  margin: 0 0 18px 0;
+  opacity: .78;
+}
+
+.publications h2, .publications h3, .publications h4 {
+  margin-top: 18px;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+  letter-spacing: .2px;
+  text-transform: none;
+}
+
+.publications .pub-group {
+  padding: 14px 14px 6px 14px;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 12px;
+  margin: 12px 0;
+  background: rgba(255,255,255,.85);
+}
+
+.publications ol, .publications ul {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.publications li {
+  margin: 10px 0;
+  line-height: 1.45;
+}
+
+.publications li strong {
+  font-weight: 700;
+}
+
+.publications li em {
+  font-style: italic;
+}
+
+.publications a {
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(0,0,0,.35);
+}
+
+.publications a:hover {
+  border-bottom-style: solid;
+}
+
+.publications .meta {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: .78rem;
+  border: 1px solid rgba(0,0,0,.10);
+  opacity: .9;
+  white-space: nowrap;
+}
+
+/* Hanging indent for long citations */
+.publications li {
+  padding-left: 0.2rem;
+}
+.publications li::marker {
+  font-weight: 600;
+}
+
+/* Make DOIs more readable */
+.publications .doi {
+  font-size: .92rem;
+  opacity: .92;
+}
+</style></head>
 <body>
-  <!-- SIDEBAR (desktop) + MOBILE HEADER (top) -->
-  <aside class="sidebar" role="navigation" aria-label="Primary">
-    <!-- Mobile top bar with small Menu box (visible on mobile only) -->
-    <div class="mobile-bar">
-      <button id="mobile-menu-btn"
-              class="mobile-menu"
-              aria-expanded="false"
-              aria-controls="mobile-menu-panel"
-              aria-label="Open navigation">
+<!-- SIDEBAR (desktop) + MOBILE HEADER (top) -->
+<aside aria-label="Primary" class="sidebar" role="navigation">
+<!-- Mobile top bar with small Menu box (visible on mobile only) -->
+<div class="mobile-bar">
+<button aria-controls="mobile-menu-panel" aria-expanded="false" aria-label="Open navigation" class="mobile-menu" id="mobile-menu-btn">
         Menu ▾
       </button>
-    </div>
-
-    <!-- Desktop vertical nav -->
-    <nav id="primary-nav" class="nav" aria-label="Primary navigation links">
-      <a href="#about">About</a>
-      <a href="#expertise">Teaching Expertise</a>
-      <a href="#teaching">Teaching Experience</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Technical Skills</a>
-      <a href="#research">Research Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#industry-experience">Professional &amp; Industrial Experience</a>
-      <a href="#workshops">Workshops &amp; Seminars</a>
-      <a href="#certs">Certifications</a>
-      <a href="#awards">Grants &amp; Awards</a>
-      <a href="#service">Service</a>
-      <a href="#publications">Publications</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <footer class="contact">
-      <p>
-        <a href="https://www.linkedin.com/in/mahdeej/" rel="me" target="_blank">LinkedIn</a> •
+</div>
+<!-- Desktop vertical nav -->
+<nav aria-label="Primary navigation links" class="nav" id="primary-nav">
+<a href="#about">About</a>
+<a href="#expertise">Teaching Expertise</a>
+<a href="#teaching">Teaching Experience</a>
+<a href="#education">Education</a>
+<a href="#skills">Technical Skills</a>
+<a href="#research">Research Experience</a>
+<a href="#projects">Projects</a>
+<a href="#industry-experience">Professional &amp; Industrial Experience</a>
+<a href="#workshops">Workshops &amp; Seminars</a>
+<a href="#certs">Certifications</a>
+<a href="#awards">Grants &amp; Awards</a>
+<a href="#service">Service</a>
+<a href="#publications">Publications</a>
+<a href="#contact">Contact</a>
+</nav>
+<footer class="contact">
+<p>
+<a href="https://www.linkedin.com/in/mahdeej/" rel="me" target="_blank">LinkedIn</a> •
         <a href="https://github.com/mahdijaf" rel="me" target="_blank">GitHub</a>
-      </p>
-      <small>Last updated: Dec 2025</small>
-    </footer>
-  </aside>
-
-  <!-- CONTENT -->
-  <div class="page">
-    <main class="content">
-      <!-- ABOUT -->
-      <section id="about" class="section about">
-        <h2 class="section-title">About</h2>
-
-        <div class="about-wrap">
-          <img src="headshot.jpg" alt="Portrait of Dr. Mahdee Jodayree" class="about-photo" />
-          <div class="about-text">
-            <h1 class="name">Dr. Mahdee Jodayree</h1>
-            <p class="about-credential">
-              PhD in Computer Science<br>
-              Department of Computing &amp; Software<br>
+</p>
+<small>Last updated: Dec 2025</small>
+</footer>
+</aside>
+<!-- CONTENT -->
+<div class="page">
+<main class="content">
+<!-- ABOUT -->
+<section class="section about" id="about">
+<h2 class="section-title">About</h2>
+<div class="about-wrap">
+<img alt="Portrait of Dr. Mahdee Jodayree" class="about-photo" src="headshot.jpg"/>
+<div class="about-text">
+<h1 class="name">Dr. Mahdee Jodayree</h1>
+<p class="about-credential">
+              PhD in Computer Science<br/>
+              Department of Computing &amp; Software<br/>
               McMaster University
             </p>
-          </div>
-        </div>
-
-        <p class="about-blurb">
+</div>
+</div>
+<p class="about-blurb">
           I am <strong>Dr. Mahdee Jodayree</strong>, a researcher and educator in Computer Science and Computer Engineering–adjacent areas.
           My work focuses on distributed and secure machine learning systems, federated learning for IoT and healthcare, cloud and edge computing,
           privacy-preserving architectures, and autonomous system modeling. I design ML and cryptographic systems that are deployable on cloud,
           edge, and embedded platforms, with strong emphasis on reliability, security, and performance-aware optimization.
         </p>
-      </section>
-
-      <!-- TEACHING EXPERTISE -->
-      <section id="expertise" class="section">
-        <h2 class="section-title">Teaching Expertise — Graduate &amp; Undergraduate</h2>
-        <ul class="cols">
-          <li>Programming (Python, Java, C, C++, C#, MATLAB, R, TensorFlow, PyTorch, Scikit-learn, Keras, JAX)</li>
-          <li>Graduate and Undergraduate Capstone Project Supervision</li>
-          <li>Computer Networks and Security</li>
-          <li>Database Systems (SQL/NoSQL)</li>
-          <li>Cybersecurity Fundamentals</li>
-          <li>Data Structures &amp; Algorithms</li>
-          <li>Cloud Computing (Azure/AWS)</li>
-          <li>Machine Learning &amp; Applied AI</li>
-          <li>Virtualization &amp; Systems Administration</li>
-          <li>Computer Architecture</li>
-          <li>Discrete Mathematics for Computer Science</li>
-        </ul>
-      </section>
-
-      <!-- TEACHING EXPERIENCE -->
-      <section id="teaching" class="section">
-        <h2 class="section-title">Teaching Experience</h2>
-
-        <p>
-          <strong>Sessional Instructor &amp; Researcher</strong> &mdash; September 2018 – Present<br />
+</section>
+<!-- TEACHING EXPERTISE -->
+<section class="section" id="expertise">
+<h2 class="section-title">Teaching Expertise — Graduate &amp; Undergraduate</h2>
+<ul class="cols">
+<li>Programming (Python, Java, C, C++, C#, MATLAB, R, TensorFlow, PyTorch, Scikit-learn, Keras, JAX)</li>
+<li>Graduate and Undergraduate Capstone Project Supervision</li>
+<li>Computer Networks and Security</li>
+<li>Database Systems (SQL/NoSQL)</li>
+<li>Cybersecurity Fundamentals</li>
+<li>Data Structures &amp; Algorithms</li>
+<li>Cloud Computing (Azure/AWS)</li>
+<li>Machine Learning &amp; Applied AI</li>
+<li>Virtualization &amp; Systems Administration</li>
+<li>Computer Architecture</li>
+<li>Discrete Mathematics for Computer Science</li>
+</ul>
+</section>
+<!-- TEACHING EXPERIENCE -->
+<section class="section" id="teaching">
+<h2 class="section-title">Teaching Experience</h2>
+<p>
+<strong>Sessional Instructor &amp; Researcher</strong> — September 2018 – Present<br/>
           McMaster University, Hamilton, ON
         </p>
-
-        <ul>
-          <li>Delivered programming instruction in Python, Java, C, and C++, including introductory programming, algorithmic problem solving, and hands-on coding exercises tailored to learners at multiple skill levels.</li>
-          <li>Delivered instruction in cloud administration, virtualization, Windows systems, and network fundamentals, including hands-on labs involving Microsoft Azure, AWS, and hybrid cloud environments.</li>
-          <li>Developed, prepared, and maintained course materials, teaching plans, lab environments, and assessment tools aligned with industry-relevant cloud administration skill sets.</li>
-          <li>Taught Azure Administration, identity management, hybrid Active Directory concepts, Microsoft 365 administration fundamentals, and cloud-based infrastructure design and troubleshooting.</li>
-          <li>Guided students through practical labs on provisioning cloud resources, configuring virtual networks, managing Windows Server roles, securing cloud workloads, and monitoring system performance.</li>
-          <li>Used AI-based tools to enhance cloud administration tasks, generate troubleshooting workflows, and support student learning efficiency through automated guidance and examples.</li>
-          <li>Monitored student learning progress and provided individualized support through office hours, structured feedback cycles, and targeted remediation strategies.</li>
-          <li>Prepared and evaluated assignments, quizzes, lab work, and capstone projects, ensuring students developed job-ready cloud and network administration skills.</li>
-          <li>Supported students in their career development by offering mentorship, resume guidance, interview preparation, and practical insights into real-world cloud and network administration roles.</li>
-        </ul>
-      </section>
-
-      <!-- EDUCATION -->
-      <section id="education" class="section">
-        <h2 class="section-title">Education</h2>
-
-        <article>
-          <h3>Ph.D. in Computer Science <span class="subtle">2019 – 2024</span></h3>
-          <p><strong>McMaster University, Faculty of Engineering</strong> — Hamilton, Ontario</p>
-          <p><em>Dissertation:</em> Distributed Machine Learning and Secure Federated Learning for IoT and Healthcare Systems</p>
-          <ul>
-            <li>Research focused on distributed and secure machine learning systems with direct relevance to computer engineering topics such as cloud computing, virtualization, embedded intelligence, and distributed system architecture.</li>
-            <li>Developed transformer-based and distributed ML models implemented in Python and Linux environments, supporting research themes in autonomous systems, real-time analytics, and hardware-aware optimization.</li>
-            <li>Designed cryptographic verification and consistency-preservation mechanisms aligned with secure computing, privacy-preserving architectures, and reliability of cloud-edge intelligent systems.</li>
-            <li>Built reproducible cloud-based experimentation pipelines and resource-efficient learning workflows applicable to embedded systems, IoT devices, and constrained computing environments.</li>
-            <li>Contributed peer-reviewed research demonstrating high-impact scholarly activity and potential for developing an internationally recognized research program in computer engineering.</li>
-          </ul>
-        </article>
-
-        <article>
-          <h3>Master of Science in Information Systems <span class="subtle">2016 – 2018</span></h3>
-          <p><strong>Athabasca University</strong> — Athabasca, Alberta</p>
-          <p><em>Dissertation:</em> Machine-learning–driven predictive load balancing for cloud services</p>
-          <ul>
-            <li>Conducted research on predictive modeling, cloud system optimization, and distributed decision frameworks connected to cloud computing, virtualization, and high-availability engineering systems.</li>
-            <li>Developed analytical and computational models relevant to system-level performance, resource management, and scalable cloud architectures used in modern computer engineering workflows.</li>
-          </ul>
-        </article>
-
-        <article>
-          <h3>Bachelor of Science in Computer Science and Mathematics <span class="subtle">2005 – 2013</span></h3>
-          <p><strong>Carleton University</strong> — Ottawa, Ontario</p>
-          <ul>
-            <li>Completed advanced coursework in algorithms, discrete mathematics, optimization, and computation theory that form the foundation of computer architecture, embedded systems, and autonomous system modeling.</li>
-            <li>Strengthened programming fundamentals essential for developing distributed ML systems, embedded intelligence, and cloud-native engineering technologies.</li>
-          </ul>
-        </article>
-      </section>
-
-      <!-- TECHNICAL SKILLS -->
-      <section id="skills" class="section">
-        <h2 class="section-title">Technical Skills</h2>
-
-        <h3>Distributed &amp; Cloud Computing Systems</h3>
-        <ul>
-          <li>Design and implementation of distributed machine learning pipelines for cloud and edge environments.</li>
-          <li>Virtualization, cloud orchestration, resource optimization, and performance modeling for large-scale systems.</li>
-          <li>Cloud-native workflows using containerized environments, Linux, automation, and reproducible computation.</li>
-        </ul>
-
-        <h3>Embedded &amp; Edge Intelligence</h3>
-        <ul>
-          <li>Development of lightweight ML architectures optimized for IoT devices, constrained hardware, and embedded systems.</li>
-          <li>Real-time inference pipelines, sensor-driven processing, and hardware-aware model optimization.</li>
-          <li>Applied techniques for secure computation, model compression, and deployment in edge and robotics systems.</li>
-        </ul>
-
-        <h3>Secure &amp; Privacy-Preserving Computing</h3>
-        <ul>
-          <li>Cryptographic verification methods for distributed learning, consistency-preserving update mechanisms, and privacy-aware computation.</li>
-          <li>Adversarial robustness, secure model aggregation, and threat-resilient system design.</li>
-          <li>Techniques for reliability, trust, and integrity in distributed and cloud-based engineering architectures.</li>
-        </ul>
-
-        <h3>Autonomous Systems &amp; Intelligent Computation</h3>
-        <ul>
-          <li>Reinforcement learning frameworks for autonomous decision-making and sequential optimization.</li>
-          <li>Transformer-based temporal modeling, sequence prediction, and real-time structural analysis.</li>
-          <li>Algorithms for robotic intelligence, trajectory modeling, and autonomous system behavior.</li>
-        </ul>
-
-        <h3>Computer Architecture–Aware Optimization</h3>
-        <ul>
-          <li>Model optimization techniques guided by hardware constraints, memory efficiency, and execution cost.</li>
-          <li>Parallel computation strategies, performance tuning, and resource-aware ML deployment.</li>
-          <li>Experience integrating ML workflows with heterogeneous computing environments.</li>
-        </ul>
-
-        <h3>Algorithms, Programming &amp; Scientific Computing</h3>
-        <ul>
-          <li>Python, C/C++, Linux environments, scientific libraries (NumPy, SciPy), and data-driven engineering analysis.</li>
-          <li>Algorithm design, numerical modeling, and system-level optimization for engineering applications.</li>
-          <li>Containerization, automation, and reproducible experimentation workflows for research and teaching.</li>
-        </ul>
-      </section>
-
-      <!-- RESEARCH EXPERIENCE -->
-      <section id="research" class="section">
-        <h2 class="section-title">Research Experience</h2>
-
-        <article>
-          <h3>Ph.D. Research – Distributed, Secure, and Cloud-Integrated Machine Learning Systems</h3>
-          <p><strong>McMaster University, Department of Computing and Software</strong> — 2019–2024</p>
-          <ul>
-            <li>Conducted research on distributed machine learning systems and secure federated learning with direct relevance to cloud computing, embedded intelligence, and computer engineering.</li>
-            <li>Designed transformer-based temporal models and distributed ML pipelines applicable to autonomous systems, real-time analytics, and robotics-oriented perception modeling.</li>
-            <li>Developed cryptographic verification mechanisms supporting privacy-preserving computation, system integrity, and reliability across virtualized and cloud-edge environments.</li>
-            <li>Built reproducible cloud workflows and resource-efficient learning pipelines supporting ML execution on IoT devices, constrained hardware, and embedded systems.</li>
-            <li>Published peer-reviewed research demonstrating high-impact scholarly work aligned with computer architecture–aware optimization, secure distributed computing, and advanced ML system design.</li>
-          </ul>
-        </article>
-
-        <article>
-          <h3>Master’s Research – Predictive Modeling and Cloud Systems Optimization</h3>
-          <p><strong>Athabasca University</strong> — 2016–2018</p>
-          <ul>
-            <li>Developed predictive modeling and distributed decision frameworks for cloud workload balancing, contributing directly to virtualization-aware optimization and scalable cloud engineering systems.</li>
-            <li>Created analytical models and computational methods related to performance prediction, resource scheduling, and reliability of distributed cloud services.</li>
-            <li>Gained experience with system-level modeling relevant to computer engineering, cloud orchestration, and real-time system optimization.</li>
-          </ul>
-        </article>
-
-        <article>
-          <h3>Foundational Research Experience – Algorithms, Systems, and Computational Modeling</h3>
-          <ul>
-            <li>Completed foundational research in algorithms, discrete mathematics, and systems modeling that support modern computer engineering topics such as embedded system computation, optimization frameworks, and architectural analysis.</li>
-            <li>Developed strong programming fundamentals enabling implementation of distributed ML systems, embedded intelligence, and cloud-native engineering workflows.</li>
-          </ul>
-        </article>
-      </section>
-
-      <!-- PROJECTS -->
-      <section id="projects" class="section">
-        <h2 class="section-title">Projects</h2>
-
-        <article>
-          <h3>LLM-Driven Code Transformation and Distributed System Validation</h3>
-          <ul>
-            <li>Designed and fine-tuned transformer-based models for structured code transformation tasks, with applications to autonomous systems, intelligent computation, and secure distributed execution.</li>
-            <li>Developed validation workflows for functional-equivalence checking, applying system-level verification principles relevant to secure computing and reliability across cloud and embedded platforms.</li>
-            <li>Implemented cloud-native training and inference pipelines using containerized environments, enabling scalable experimentation and reproducible engineering workflows.</li>
-          </ul>
-        </article>
-
-        <article>
-          <h3>Cloud-Integrated Machine Learning Pipelines for Edge and IoT Devices</h3>
-          <ul>
-            <li>Developed distributed ML pipelines that operate across cloud and edge devices, supporting embedded intelligence, constrained hardware execution, and virtualization-aware deployment strategies.</li>
-            <li>Built real-time processing workflows for IoT environments, integrating model optimization, resource-efficient computation, and secure data pathways aligned with modern computer engineering practices.</li>
-            <li>Created monitoring and orchestration workflows using Linux and containerized systems to ensure reliability, performance, and system integrity in cloud-edge deployments.</li>
-          </ul>
-        </article>
-
-        <article>
-          <h3>Autonomous System Modeling Using Reinforcement Learning and Temporal Transformers</h3>
-          <ul>
-            <li>Designed reinforcement learning and transformer-based models for decision-making, trajectory prediction, and temporal behavior analysis in autonomous and robotics-oriented systems.</li>
-            <li>Developed simulation workflows and sequence-modeling architectures that support real-time computation, system-level adaptation, and intelligent system behavior.</li>
-            <li>Integrated computational models with embedded system constraints to support hardware-aware autonomy and efficient deployment in resource-limited environments.</li>
-          </ul>
-        </article>
-
-        <article>
-          <h3>Secure Distributed Computing and Privacy-Preserving Architecture Design</h3>
-          <ul>
-            <li>Built cryptographic verification components and consistency-preservation mechanisms that enhance reliability, privacy, and trust in distributed learning and cloud-integrated systems.</li>
-            <li>Developed secure update aggregation workflows, adversarial robustness checks, and integrity-verification strategies aligned with secure computing and modern distributed architecture requirements.</li>
-            <li>Engineered reproducible experimentation environments for evaluating system performance, distributed model behavior, and fault-tolerant engineering design principles.</li>
-          </ul>
-        </article>
-      </section>
-
-      <!-- INDUSTRY EXPERIENCE -->
-      <section id="industry-experience" class="section">
-        <h2 class="section-title">Professional &amp; Industrial Experience</h2>
-
-        <article class="xp">
-          <h3 class="job-title">Cloud Infrastructure, Security &amp; DevOps Architect</h3>
-          <div class="job-meta"><span class="company">Manulife</span> • <span class="location">Toronto, ON</span> • <span class="dates">Sep 2021 – Jul 2025</span></div>
-          <ul class="experience-list">
-            <li>Designed, built, and maintained secure, scalable Azure cloud infrastructure using <strong>Terraform</strong>, <strong>Bicep</strong>, and <strong>ARM Templates</strong> across Dev, Test, UAT, and Production.</li>
-            <li>Developed and managed <strong>Azure DevOps (YAML)</strong> CI/CD pipelines for automated provisioning, build, test, and release management.</li>
-            <li>Configured <strong>VNets</strong>, <strong>NSGs</strong>, <strong>Private Endpoints</strong>, and <strong>Key Vault</strong> to ensure secure connectivity, access control, and data protection.</li>
-            <li>Delivered predictive security metrics using <strong>Power BI</strong>, <strong>AI Builder</strong>, and <strong>Dataverse</strong> for vulnerability forecasting.</li>
-          </ul>
-        </article>
-
-        <article class="xp">
-          <h3 class="job-title">Cloud Network &amp; Infrastructure Architect</h3>
-          <div class="job-meta"><span class="company">McMaster Innovation Park</span> • <span class="location">Hamilton, ON</span> • <span class="dates">Sep 2018 – Sep 2021</span></div>
-          <ul class="experience-list">
-            <li>Architected and optimized <strong>hybrid cloud networks</strong> integrating on-prem and Azure services for research and enterprise clients.</li>
-            <li>Built automated <strong>monitoring and compliance frameworks</strong> to ensure uptime, security, and governance.</li>
-            <li>Supported and optimized multi-language stacks (<strong>Python</strong>, <strong>C#</strong>, .NET) for performance and reliability.</li>
-            <li>Deployed and managed <strong>AKS</strong> clusters to orchestrate containerized workloads with high availability and load balancing.</li>
-          </ul>
-        </article>
-
-        <article class="xp">
-          <h3 class="job-title">Cloud Infrastructure &amp; Security Engineer</h3>
-          <div class="job-meta"><span class="company">TELUS Digital</span> • <span class="location">Calgary, AB</span> • <span class="dates">Sep 2014 – Aug 2018</span></div>
-          <ul class="experience-list">
-            <li>Led <strong>Docker</strong> containerization initiatives and private registries to standardize deployments across teams.</li>
-            <li>Automated environment provisioning with <strong>GitHub Actions</strong>, <strong>PowerShell</strong>, and <strong>Bash</strong> for reproducible builds and auditability.</li>
-            <li>Delivered secure, cross-platform administration across <strong>Linux</strong> and <strong>UNIX</strong> systems.</li>
-            <li>Hardened application access through <strong>OAuth 2.0</strong> REST API integrations and role-based controls.</li>
-          </ul>
-        </article>
-
-        <article class="xp">
-          <h3 class="job-title">Cloud Migration Specialist</h3>
-          <div class="job-meta"><span class="company">CIBC</span> • <span class="location">Ottawa, ON</span> • <span class="dates">Sep 2011 – Sep 2014</span></div>
-          <ul class="experience-list">
-            <li>Executed large-scale <strong>Azure</strong> migration programs, modernizing legacy applications and infrastructure.</li>
-            <li>Designed and maintained <strong>networking</strong> and <strong>storage</strong> solutions to support high-availability financial systems.</li>
-            <li>Ensured secure data transfer, encryption, and compliance with industry regulations.</li>
-            <li>Produced clear documentation and training to accelerate adoption of cloud platforms.</li>
-          </ul>
-        </article>
-      </section>
-
-      <!-- WORKSHOPS -->
-      <section id="workshops" class="section">
-        <h2 class="section-title">Workshops &amp; Seminars</h2>
-        <ul>
-          <li><strong>Huawei Workshop</strong> — Toronto, Canada (Apr 2023): Program Verification, PL Implementation, Concurrent Data Structures.</li>
-          <li><strong>IBM Canada</strong> — Toronto, ON (Mar 2023): Software Engineering Best Practices &amp; Innovations.</li>
-          <li><strong>Axia Engineering</strong> — Mississauga, ON (Feb 2023): Engineering Consultancy &amp; Software Development.</li>
-          <li><strong>Arrayus Technologies Inc</strong> — Ottawa, ON (Jan 2023): Innovation for Technology Solutions &amp; Strategy.</li>
-          <li><strong>CrowdStrike</strong> — Kitchener, ON (Dec 2022): Cybersecurity Trends &amp; SE Methodologies.</li>
-          <li><strong>CVI &amp; HMI Innovation</strong> — Hamilton, ON (Nov 2022): Human-Machine Interface &amp; Computer Vision.</li>
-        </ul>
-      </section>
-
-      <!-- CERTIFICATIONS -->
-      <section id="certs" class="section">
-        <h2 class="section-title">Certifications</h2>
-        <ul>
-          <li>
-            <strong>Teaching &amp; Learning Certificate</strong>, MacPherson Institute (McMaster University)
+<ul>
+<li>Delivered programming instruction in Python, Java, C, and C++, including introductory programming, algorithmic problem solving, and hands-on coding exercises tailored to learners at multiple skill levels.</li>
+<li>Delivered instruction in cloud administration, virtualization, Windows systems, and network fundamentals, including hands-on labs involving Microsoft Azure, AWS, and hybrid cloud environments.</li>
+<li>Developed, prepared, and maintained course materials, teaching plans, lab environments, and assessment tools aligned with industry-relevant cloud administration skill sets.</li>
+<li>Taught Azure Administration, identity management, hybrid Active Directory concepts, Microsoft 365 administration fundamentals, and cloud-based infrastructure design and troubleshooting.</li>
+<li>Guided students through practical labs on provisioning cloud resources, configuring virtual networks, managing Windows Server roles, securing cloud workloads, and monitoring system performance.</li>
+<li>Used AI-based tools to enhance cloud administration tasks, generate troubleshooting workflows, and support student learning efficiency through automated guidance and examples.</li>
+<li>Monitored student learning progress and provided individualized support through office hours, structured feedback cycles, and targeted remediation strategies.</li>
+<li>Prepared and evaluated assignments, quizzes, lab work, and capstone projects, ensuring students developed job-ready cloud and network administration skills.</li>
+<li>Supported students in their career development by offering mentorship, resume guidance, interview preparation, and practical insights into real-world cloud and network administration roles.</li>
+</ul>
+</section>
+<!-- EDUCATION -->
+<section class="section" id="education">
+<h2 class="section-title">Education</h2>
+<article>
+<h3>Ph.D. in Computer Science <span class="subtle">2019 – 2024</span></h3>
+<p><strong>McMaster University, Faculty of Engineering</strong> — Hamilton, Ontario</p>
+<p><em>Dissertation:</em> Distributed Machine Learning and Secure Federated Learning for IoT and Healthcare Systems</p>
+<ul>
+<li>Research focused on distributed and secure machine learning systems with direct relevance to computer engineering topics such as cloud computing, virtualization, embedded intelligence, and distributed system architecture.</li>
+<li>Developed transformer-based and distributed ML models implemented in Python and Linux environments, supporting research themes in autonomous systems, real-time analytics, and hardware-aware optimization.</li>
+<li>Designed cryptographic verification and consistency-preservation mechanisms aligned with secure computing, privacy-preserving architectures, and reliability of cloud-edge intelligent systems.</li>
+<li>Built reproducible cloud-based experimentation pipelines and resource-efficient learning workflows applicable to embedded systems, IoT devices, and constrained computing environments.</li>
+<li>Contributed peer-reviewed research demonstrating high-impact scholarly activity and potential for developing an internationally recognized research program in computer engineering.</li>
+</ul>
+</article>
+<article>
+<h3>Master of Science in Information Systems <span class="subtle">2016 – 2018</span></h3>
+<p><strong>Athabasca University</strong> — Athabasca, Alberta</p>
+<p><em>Dissertation:</em> Machine-learning–driven predictive load balancing for cloud services</p>
+<ul>
+<li>Conducted research on predictive modeling, cloud system optimization, and distributed decision frameworks connected to cloud computing, virtualization, and high-availability engineering systems.</li>
+<li>Developed analytical and computational models relevant to system-level performance, resource management, and scalable cloud architectures used in modern computer engineering workflows.</li>
+</ul>
+</article>
+<article>
+<h3>Bachelor of Science in Computer Science and Mathematics <span class="subtle">2005 – 2013</span></h3>
+<p><strong>Carleton University</strong> — Ottawa, Ontario</p>
+<ul>
+<li>Completed advanced coursework in algorithms, discrete mathematics, optimization, and computation theory that form the foundation of computer architecture, embedded systems, and autonomous system modeling.</li>
+<li>Strengthened programming fundamentals essential for developing distributed ML systems, embedded intelligence, and cloud-native engineering technologies.</li>
+</ul>
+</article>
+</section>
+<!-- TECHNICAL SKILLS -->
+<section class="section" id="skills">
+<h2 class="section-title">Technical Skills</h2>
+<h3>Distributed &amp; Cloud Computing Systems</h3>
+<ul>
+<li>Design and implementation of distributed machine learning pipelines for cloud and edge environments.</li>
+<li>Virtualization, cloud orchestration, resource optimization, and performance modeling for large-scale systems.</li>
+<li>Cloud-native workflows using containerized environments, Linux, automation, and reproducible computation.</li>
+</ul>
+<h3>Embedded &amp; Edge Intelligence</h3>
+<ul>
+<li>Development of lightweight ML architectures optimized for IoT devices, constrained hardware, and embedded systems.</li>
+<li>Real-time inference pipelines, sensor-driven processing, and hardware-aware model optimization.</li>
+<li>Applied techniques for secure computation, model compression, and deployment in edge and robotics systems.</li>
+</ul>
+<h3>Secure &amp; Privacy-Preserving Computing</h3>
+<ul>
+<li>Cryptographic verification methods for distributed learning, consistency-preserving update mechanisms, and privacy-aware computation.</li>
+<li>Adversarial robustness, secure model aggregation, and threat-resilient system design.</li>
+<li>Techniques for reliability, trust, and integrity in distributed and cloud-based engineering architectures.</li>
+</ul>
+<h3>Autonomous Systems &amp; Intelligent Computation</h3>
+<ul>
+<li>Reinforcement learning frameworks for autonomous decision-making and sequential optimization.</li>
+<li>Transformer-based temporal modeling, sequence prediction, and real-time structural analysis.</li>
+<li>Algorithms for robotic intelligence, trajectory modeling, and autonomous system behavior.</li>
+</ul>
+<h3>Computer Architecture–Aware Optimization</h3>
+<ul>
+<li>Model optimization techniques guided by hardware constraints, memory efficiency, and execution cost.</li>
+<li>Parallel computation strategies, performance tuning, and resource-aware ML deployment.</li>
+<li>Experience integrating ML workflows with heterogeneous computing environments.</li>
+</ul>
+<h3>Algorithms, Programming &amp; Scientific Computing</h3>
+<ul>
+<li>Python, C/C++, Linux environments, scientific libraries (NumPy, SciPy), and data-driven engineering analysis.</li>
+<li>Algorithm design, numerical modeling, and system-level optimization for engineering applications.</li>
+<li>Containerization, automation, and reproducible experimentation workflows for research and teaching.</li>
+</ul>
+</section>
+<!-- RESEARCH EXPERIENCE -->
+<section class="section" id="research">
+<h2 class="section-title">Research Experience</h2>
+<article>
+<h3>Ph.D. Research – Distributed, Secure, and Cloud-Integrated Machine Learning Systems</h3>
+<p><strong>McMaster University, Department of Computing and Software</strong> — 2019–2024</p>
+<ul>
+<li>Conducted research on distributed machine learning systems and secure federated learning with direct relevance to cloud computing, embedded intelligence, and computer engineering.</li>
+<li>Designed transformer-based temporal models and distributed ML pipelines applicable to autonomous systems, real-time analytics, and robotics-oriented perception modeling.</li>
+<li>Developed cryptographic verification mechanisms supporting privacy-preserving computation, system integrity, and reliability across virtualized and cloud-edge environments.</li>
+<li>Built reproducible cloud workflows and resource-efficient learning pipelines supporting ML execution on IoT devices, constrained hardware, and embedded systems.</li>
+<li>Published peer-reviewed research demonstrating high-impact scholarly work aligned with computer architecture–aware optimization, secure distributed computing, and advanced ML system design.</li>
+</ul>
+</article>
+<article>
+<h3>Master’s Research – Predictive Modeling and Cloud Systems Optimization</h3>
+<p><strong>Athabasca University</strong> — 2016–2018</p>
+<ul>
+<li>Developed predictive modeling and distributed decision frameworks for cloud workload balancing, contributing directly to virtualization-aware optimization and scalable cloud engineering systems.</li>
+<li>Created analytical models and computational methods related to performance prediction, resource scheduling, and reliability of distributed cloud services.</li>
+<li>Gained experience with system-level modeling relevant to computer engineering, cloud orchestration, and real-time system optimization.</li>
+</ul>
+</article>
+<article>
+<h3>Foundational Research Experience – Algorithms, Systems, and Computational Modeling</h3>
+<ul>
+<li>Completed foundational research in algorithms, discrete mathematics, and systems modeling that support modern computer engineering topics such as embedded system computation, optimization frameworks, and architectural analysis.</li>
+<li>Developed strong programming fundamentals enabling implementation of distributed ML systems, embedded intelligence, and cloud-native engineering workflows.</li>
+</ul>
+</article>
+</section>
+<!-- PROJECTS -->
+<section class="section" id="projects">
+<h2 class="section-title">Projects</h2>
+<article>
+<h3>LLM-Driven Code Transformation and Distributed System Validation</h3>
+<ul>
+<li>Designed and fine-tuned transformer-based models for structured code transformation tasks, with applications to autonomous systems, intelligent computation, and secure distributed execution.</li>
+<li>Developed validation workflows for functional-equivalence checking, applying system-level verification principles relevant to secure computing and reliability across cloud and embedded platforms.</li>
+<li>Implemented cloud-native training and inference pipelines using containerized environments, enabling scalable experimentation and reproducible engineering workflows.</li>
+</ul>
+</article>
+<article>
+<h3>Cloud-Integrated Machine Learning Pipelines for Edge and IoT Devices</h3>
+<ul>
+<li>Developed distributed ML pipelines that operate across cloud and edge devices, supporting embedded intelligence, constrained hardware execution, and virtualization-aware deployment strategies.</li>
+<li>Built real-time processing workflows for IoT environments, integrating model optimization, resource-efficient computation, and secure data pathways aligned with modern computer engineering practices.</li>
+<li>Created monitoring and orchestration workflows using Linux and containerized systems to ensure reliability, performance, and system integrity in cloud-edge deployments.</li>
+</ul>
+</article>
+<article>
+<h3>Autonomous System Modeling Using Reinforcement Learning and Temporal Transformers</h3>
+<ul>
+<li>Designed reinforcement learning and transformer-based models for decision-making, trajectory prediction, and temporal behavior analysis in autonomous and robotics-oriented systems.</li>
+<li>Developed simulation workflows and sequence-modeling architectures that support real-time computation, system-level adaptation, and intelligent system behavior.</li>
+<li>Integrated computational models with embedded system constraints to support hardware-aware autonomy and efficient deployment in resource-limited environments.</li>
+</ul>
+</article>
+<article>
+<h3>Secure Distributed Computing and Privacy-Preserving Architecture Design</h3>
+<ul>
+<li>Built cryptographic verification components and consistency-preservation mechanisms that enhance reliability, privacy, and trust in distributed learning and cloud-integrated systems.</li>
+<li>Developed secure update aggregation workflows, adversarial robustness checks, and integrity-verification strategies aligned with secure computing and modern distributed architecture requirements.</li>
+<li>Engineered reproducible experimentation environments for evaluating system performance, distributed model behavior, and fault-tolerant engineering design principles.</li>
+</ul>
+</article>
+</section>
+<!-- INDUSTRY EXPERIENCE -->
+<section class="section" id="industry-experience">
+<h2 class="section-title">Professional &amp; Industrial Experience</h2>
+<article class="xp">
+<h3 class="job-title">Cloud Infrastructure, Security &amp; DevOps Architect</h3>
+<div class="job-meta"><span class="company">Manulife</span> • <span class="location">Toronto, ON</span> • <span class="dates">Sep 2021 – Jul 2025</span></div>
+<ul class="experience-list">
+<li>Designed, built, and maintained secure, scalable Azure cloud infrastructure using <strong>Terraform</strong>, <strong>Bicep</strong>, and <strong>ARM Templates</strong> across Dev, Test, UAT, and Production.</li>
+<li>Developed and managed <strong>Azure DevOps (YAML)</strong> CI/CD pipelines for automated provisioning, build, test, and release management.</li>
+<li>Configured <strong>VNets</strong>, <strong>NSGs</strong>, <strong>Private Endpoints</strong>, and <strong>Key Vault</strong> to ensure secure connectivity, access control, and data protection.</li>
+<li>Delivered predictive security metrics using <strong>Power BI</strong>, <strong>AI Builder</strong>, and <strong>Dataverse</strong> for vulnerability forecasting.</li>
+</ul>
+</article>
+<article class="xp">
+<h3 class="job-title">Cloud Network &amp; Infrastructure Architect</h3>
+<div class="job-meta"><span class="company">McMaster Innovation Park</span> • <span class="location">Hamilton, ON</span> • <span class="dates">Sep 2018 – Sep 2021</span></div>
+<ul class="experience-list">
+<li>Architected and optimized <strong>hybrid cloud networks</strong> integrating on-prem and Azure services for research and enterprise clients.</li>
+<li>Built automated <strong>monitoring and compliance frameworks</strong> to ensure uptime, security, and governance.</li>
+<li>Supported and optimized multi-language stacks (<strong>Python</strong>, <strong>C#</strong>, .NET) for performance and reliability.</li>
+<li>Deployed and managed <strong>AKS</strong> clusters to orchestrate containerized workloads with high availability and load balancing.</li>
+</ul>
+</article>
+<article class="xp">
+<h3 class="job-title">Cloud Infrastructure &amp; Security Engineer</h3>
+<div class="job-meta"><span class="company">TELUS Digital</span> • <span class="location">Calgary, AB</span> • <span class="dates">Sep 2014 – Aug 2018</span></div>
+<ul class="experience-list">
+<li>Led <strong>Docker</strong> containerization initiatives and private registries to standardize deployments across teams.</li>
+<li>Automated environment provisioning with <strong>GitHub Actions</strong>, <strong>PowerShell</strong>, and <strong>Bash</strong> for reproducible builds and auditability.</li>
+<li>Delivered secure, cross-platform administration across <strong>Linux</strong> and <strong>UNIX</strong> systems.</li>
+<li>Hardened application access through <strong>OAuth 2.0</strong> REST API integrations and role-based controls.</li>
+</ul>
+</article>
+<article class="xp">
+<h3 class="job-title">Cloud Migration Specialist</h3>
+<div class="job-meta"><span class="company">CIBC</span> • <span class="location">Ottawa, ON</span> • <span class="dates">Sep 2011 – Sep 2014</span></div>
+<ul class="experience-list">
+<li>Executed large-scale <strong>Azure</strong> migration programs, modernizing legacy applications and infrastructure.</li>
+<li>Designed and maintained <strong>networking</strong> and <strong>storage</strong> solutions to support high-availability financial systems.</li>
+<li>Ensured secure data transfer, encryption, and compliance with industry regulations.</li>
+<li>Produced clear documentation and training to accelerate adoption of cloud platforms.</li>
+</ul>
+</article>
+</section>
+<!-- WORKSHOPS -->
+<section class="section" id="workshops">
+<h2 class="section-title">Workshops &amp; Seminars</h2>
+<ul>
+<li><strong>Huawei Workshop</strong> — Toronto, Canada (Apr 2023): Program Verification, PL Implementation, Concurrent Data Structures.</li>
+<li><strong>IBM Canada</strong> — Toronto, ON (Mar 2023): Software Engineering Best Practices &amp; Innovations.</li>
+<li><strong>Axia Engineering</strong> — Mississauga, ON (Feb 2023): Engineering Consultancy &amp; Software Development.</li>
+<li><strong>Arrayus Technologies Inc</strong> — Ottawa, ON (Jan 2023): Innovation for Technology Solutions &amp; Strategy.</li>
+<li><strong>CrowdStrike</strong> — Kitchener, ON (Dec 2022): Cybersecurity Trends &amp; SE Methodologies.</li>
+<li><strong>CVI &amp; HMI Innovation</strong> — Hamilton, ON (Nov 2022): Human-Machine Interface &amp; Computer Vision.</li>
+</ul>
+</section>
+<!-- CERTIFICATIONS -->
+<section class="section" id="certs">
+<h2 class="section-title">Certifications</h2>
+<ul>
+<li>
+<strong>Teaching &amp; Learning Certificate</strong>, MacPherson Institute (McMaster University)
             <ul>
-              <li>EDUCATION 740 — Peer-Evaluated Teaching Experience</li>
-              <li>EDUCATION 760 — Self-Directed Study</li>
-              <li>EDUCATION 780 — Self-Directed Teaching Experience</li>
-            </ul>
-          </li>
-          <li>Microsoft Certified: Azure Fundamentals (AZ-900)</li>
-          <li>Microsoft Certified: Azure Data Fundamentals (DP-900)</li>
-          <li>CompTIA A+ — Remote Support Technician</li>
-        </ul>
-      </section>
-
-      <!-- AWARDS -->
-      <section id="awards" class="section">
-        <h2 class="section-title">Grants, Awards, and Honors</h2>
-        <ul>
-          <li><strong>Distinguished Teaching Assistant Award</strong> — McMaster University (Fall 2019 &amp; Winter 2020)</li>
-          <li><strong>Research Excellence Award</strong> — Federated Learning &amp; Health Informatics (2023)</li>
-          <li><strong>Graduate Research Grant</strong> — Optimization in Federated Learning frameworks (2022)</li>
-          <li><strong>Best Paper Award</strong> — KES 2023 (Data Security in Federated Learning)</li>
-        </ul>
-      </section>
-
-      <!-- SERVICE -->
-      <section id="service" class="section">
-        <h2 class="section-title">Service to the Academic Community</h2>
-        <h3>Coffee Hour for Students</h3>
-        <ul>
-          <li>Planned and managed graduate CS community events; coordinated logistics and engagement.</li>
-        </ul>
-        <h3>Capstone Project Mentor (Mechatronics &amp; Computer Science)</h3>
-        <ul>
-          <li>Guided student presentations, provided structured feedback, and supported faculty coordination.</li>
-        </ul>
-      </section>
-
-      <!-- PUBLICATIONS -->
-      <section id="publications" class="section">
-        <h2 class="section-title">Publications</h2>
-
-        <h3>Journal Publications (First Author) — Published, Submitted &amp; Under Review</h3>
-        <ol>
-          <li>Jodayree, M., He, W., and Janicki, R., “Proof-Before-Train Federated Learning: ECC-Backed Zero-Leak Commitments and Trust-Aware Aggregation”, <em>Scientific Reports</em> — Q1</li>
-          <li>Jodayree, M., “Explainable Zero-Day Attack Detection in IoMT Using Transformer-based Time-Series Modeling”, <em>Scientific Reports</em> — Q1</li>
-          <li>Jodayree, M., “Uncertainty-Aware Hybrid Autoscaling with Bias-Corrected Deep Forecasting for Cost-Efficient SLA Preservation Across Cloud Workloads”, <em>Scientific Reports</em> — Q1</li>
-          <li>Jodayree, M., “A Systematic Literature Review of Artificial Intelligence Methods Applied to the Human Epidemic (COVID-19)”, <em>Applied Network Science</em> — Q1</li>
-          <li>Jodayree, M., “Federated Learning Across Schools to Predict Student Outcomes: Secured With Proof-Before-Train and Differential Privacy”, <em>Scientific Reports</em> — Q1</li>
-          <li>Jodayree, M., Atashafrouz, M., Raeispour Rajabali, A., Jalalkamali, M., et al., “The Role of Supply Chain Finance (SCF) Platforms in Mitigating Financial Risk and Improving Resilience”, <em>American Institute of Mathematical Sciences (AIMS)</em> — Q2,
-            DOI: <a href="https://doi.org/10.3934/jdg.2026015" target="_blank" rel="noopener">10.3934/jdg.2026015</a>
-          </li>
-        </ol>
-
-        <h3>Books</h3>
-        <ol start="7">
-          <li>Jodayree, M., “Agritech — Focusing on Precision Agriculture, AI and ML Applications, Blockchain, Mobile Applications, and Digital Logistics”, Book Chapter</li>
-          <li>Jodayree, M., “Prevention of Data Poisoning Attacks in Federated Machine Learning — Persian Edition”, Book, ISBN: 978-622-8712-19-2</li>
-        </ol>
-
-        <h3>Conference Papers</h3>
-        <ol start="9">
-          <li>Jodayree, M., “An Encrypted Forensic Method for Preventing Data Poisoning Attacks in Federated Learning”, International Conference on Fuzzy Systems and Data Mining, Matsue, Japan</li>
-          <li>Jodayree, M., He, W., and Janicki, R., “Preventing Text Data Poisoning Attacks in Federated Machine Learning by an Encrypted Verification Key”, IJCRS 2023</li>
-          <li>Jodayree, M., He, W., and Janicki, R., “Preventing Image Data Poisoning Attacks in Federated Machine Learning by an Encrypted Verification Key”, KES 2023</li>
-          <li>Jodayree, M., and Janicki, R., “A Predictive Resources Management for Clouds”, FLINS 2020</li>
-          <li>Jodayree, M., Abaza, M., and Tan, Q., “A Predictive Workload Balancing Algorithm in Cloud Services”, <em>Procedia Computer Science</em>, vol. 159, pp. 902–912, 2019</li>
-        </ol>
-      </section>
-
+<li>EDUCATION 740 — Peer-Evaluated Teaching Experience</li>
+<li>EDUCATION 760 — Self-Directed Study</li>
+<li>EDUCATION 780 — Self-Directed Teaching Experience</li>
+</ul>
+</li>
+<li>Microsoft Certified: Azure Fundamentals (AZ-900)</li>
+<li>Microsoft Certified: Azure Data Fundamentals (DP-900)</li>
+<li>CompTIA A+ — Remote Support Technician</li>
+</ul>
+</section>
+<!-- AWARDS -->
+<section class="section" id="awards">
+<h2 class="section-title">Grants, Awards, and Honors</h2>
+<ul>
+<li><strong>Distinguished Teaching Assistant Award</strong> — McMaster University (Fall 2019 &amp; Winter 2020)</li>
+<li><strong>Research Excellence Award</strong> — Federated Learning &amp; Health Informatics (2023)</li>
+<li><strong>Graduate Research Grant</strong> — Optimization in Federated Learning frameworks (2022)</li>
+<li><strong>Best Paper Award</strong> — KES 2023 (Data Security in Federated Learning)</li>
+</ul>
+</section>
+<!-- SERVICE -->
+<section class="section" id="service">
+<h2 class="section-title">Service to the Academic Community</h2>
+<h3>Coffee Hour for Students</h3>
+<ul>
+<li>Planned and managed graduate CS community events; coordinated logistics and engagement.</li>
+</ul>
+<h3>Capstone Project Mentor (Mechatronics &amp; Computer Science)</h3>
+<ul>
+<li>Guided student presentations, provided structured feedback, and supported faculty coordination.</li>
+</ul>
+</section>
+<!-- PUBLICATIONS -->
+<section class="section" id="publications"><div class="publications">
+<h2 class="section-title pub-title">Publications</h2><p class="pub-subtitle">Selected scholarly outputs grouped by venue type. Titles are bolded; locations and DOIs included where available.</p>
+<h3>Q1 Journal Publications (First Author) — Published, Submitted &amp; Under Review <span class="meta">Q1</span></h3>
+<ol>
+<li>Jodayree, M., He, W., and Janicki, R., <strong>“Proof-Before-Train Federated Learning: ECC-Backed Zero-Leak Commitments and Trust-Aware Aggregation”</strong>, Scientific Reports — Q1</li>
+<li>Jodayree, M., <strong>“Explainable Zero-Day Attack Detection in IoMT Using Transformer-based Time-Series Modeling”</strong>, Scientific Reports — Q1</li>
+<li>Jodayree, M., <strong>“Uncertainty-Aware Hybrid Autoscaling with Bias-Corrected Deep Forecasting for Cost-Efficient SLA Preservation Across Cloud Workloads”</strong>, Scientific Reports — Q1</li>
+<li>Jodayree, M., <strong>“A Systematic Literature Review of Artificial Intelligence Methods Applied to the Human Epidemic (COVID-19)”</strong>, Applied Network Science — Q1</li>
+<li>Jodayree, M., <strong>“Federated Learning Across Schools to Predict Student Outcomes: Secured With Proof-Before-Train and Differential Privacy”</strong>, Scientific Reports — Q1</li>
+<li>Jodayree, M., Atashafrouz, M., Raeispour Rajabali, A., Jalalkamali, M., et al., <strong>“The Role of Supply Chain Finance (SCF) Platforms in Mitigating Financial Risk and Improving Resilience”</strong>, American Institute of Mathematical Sciences (AIMS) — Q2,
+            DOI: 10.3934/jdg.2026015
+</li>
+</ol>
+<div class="pub-group"><h3>Books</h3><ol start="7">
+<li>Jodayree, M., <strong>“Agritech — Focusing on Precision Agriculture, AI and ML Applications, Blockchain, Mobile Applications, and Digital Logistics”</strong>, Book Chapter</li>
+<li>Jodayree, M., <strong>“Prevention of Data Poisoning Attacks in Federated Machine Learning — Persian Edition”</strong>, Book, ISBN: 978-622-8712-19-2</li>
+</ol></div><div class="pub-group"><h3>Conference Papers</h3><ol start="9">
+<li>Jodayree, M., “<strong>“An Encrypted Forensic Method for Preventing Data Poisoning Attacks in Federated Learning”</strong><br/><em>International Conference on Fuzzy Systems and Data Mining</em>, Matsue, Japan”, International Conference on Fuzzy Systems and Data Mining, Matsue, Japan</li>
+<li>Jodayree, M., He, W., and Janicki, R., “<strong>“Preventing Text Data Poisoning Attacks in Federated Machine Learning by an Encrypted Verification Key”</strong><br/><em>IJCRS 2023</em>, Kraków, Poland”, IJCRS 2023</li>
+<li>Jodayree, M., He, W., and Janicki, R., “<strong>“Preventing Image Data Poisoning Attacks in Federated Machine Learning by an Encrypted Verification Key”</strong><br/><em>KES 2023</em>, Athens, Greece<br/>DOI: https://doi.org/10.1016/j.procs.2023.10.264”, KES 2023</li>
+<li>Jodayree, M., and Janicki, R., “<strong>“A Predictive Resources Management for Clouds”</strong><br/><em>FLINS 2020</em>, Cologne, Germany<br/>DOI: https://doi.org/10.1142/9789811223334_0051”, FLINS 2020</li>
+<li>Jodayree, M., Abaza, M., and Tan, Q., “<strong>“A Predictive Workload Balancing Algorithm in Cloud Services”</strong><br/><em>Procedia Computer Science</em>, Budapest, Hungary<br/>DOI: https://doi.org/10.1016/j.procs.2019.09.250”, Procedia Computer Science, vol. 159, pp. 902–912, 2019</li>
+</ol></div></div></section>
 <!-- CONTACT -->
-      <section id="contact" class="section">
-        <h2 class="section-title">Contact</h2>
-        <p>
+<section class="section" id="contact">
+<h2 class="section-title">Contact</h2>
+<p>
           Connect with me on
           <a href="https://www.linkedin.com/in/mahdeej/" rel="me" target="_blank">LinkedIn</a>,
           or explore my work on
           <a href="https://github.com/mahdijaf" rel="me" target="_blank">GitHub</a>.
         </p>
-      </section>
-    </main>
-  </div>
-
-  <!-- MOBILE DROPDOWN PANEL (outside sidebar to avoid clipping) -->
-  <div id="mobile-menu-panel" class="mobile-menu-panel" role="menu" aria-label="Mobile navigation menu">
-    <a href="#about" role="menuitem">About</a>
-    <a href="#expertise" role="menuitem">Teaching Expertise</a>
-    <a href="#teaching" role="menuitem">Teaching Experience</a>
-    <a href="#education" role="menuitem">Education</a>
-    <a href="#skills" role="menuitem">Technical Skills</a>
-    <a href="#research" role="menuitem">Research Experience</a>
-    <a href="#projects" role="menuitem">Projects</a>
-    <a href="#industry-experience" role="menuitem">Professional &amp; Industrial Experience</a>
-    <a href="#workshops" role="menuitem">Workshops &amp; Seminars</a>
-    <a href="#certs" role="menuitem">Certifications</a>
-    <a href="#awards" role="menuitem">Grants &amp; Awards</a>
-    <a href="#service" role="menuitem">Service</a>
-    <a href="#publications" role="menuitem">Publications</a>
-    <a href="#contact" role="menuitem">Contact</a>
-  </div>
+</section>
+</main>
+</div>
+<!-- MOBILE DROPDOWN PANEL (outside sidebar to avoid clipping) -->
+<div aria-label="Mobile navigation menu" class="mobile-menu-panel" id="mobile-menu-panel" role="menu">
+<a href="#about" role="menuitem">About</a>
+<a href="#expertise" role="menuitem">Teaching Expertise</a>
+<a href="#teaching" role="menuitem">Teaching Experience</a>
+<a href="#education" role="menuitem">Education</a>
+<a href="#skills" role="menuitem">Technical Skills</a>
+<a href="#research" role="menuitem">Research Experience</a>
+<a href="#projects" role="menuitem">Projects</a>
+<a href="#industry-experience" role="menuitem">Professional &amp; Industrial Experience</a>
+<a href="#workshops" role="menuitem">Workshops &amp; Seminars</a>
+<a href="#certs" role="menuitem">Certifications</a>
+<a href="#awards" role="menuitem">Grants &amp; Awards</a>
+<a href="#service" role="menuitem">Service</a>
+<a href="#publications" role="menuitem">Publications</a>
+<a href="#contact" role="menuitem">Contact</a>
+</div>
 </body>
 </html>

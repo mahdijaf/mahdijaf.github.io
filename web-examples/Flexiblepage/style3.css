@@ -1,0 +1,39 @@
+body {
+  font-family: Arial;
+}
+
+.box {
+  padding: 20px;
+  border: 2px solid blue;
+  margin: 30px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  padding: 30px;
+  background-color: white;
+  box-shadow: 0 8px 20px gray;
+  flex: 1;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .cards {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    min-width: 40%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .cards {
+    flex-direction: column;
+  }
+}
